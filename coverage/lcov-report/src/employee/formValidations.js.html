@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/employee/formValidations.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/employee</a> formValidations.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.96% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">39.13% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.27% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// This file is initially from https://github.com/erikras/react-redux-universal-hot-example/blob/master/src/utils/validation.js,
+// which is linked from http://erikras.github.io/redux-form/#/examples/synchronous-validation?_k=dd5lso
+&nbsp;
+const isEmpty = value =&gt; value === undefined || <span class="branch-1 cbranch-no" title="branch not covered" >value === null </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >value === '';</span>
+const join = (rules) =&gt; (value, data, props) =&gt; rules.map(rule =&gt; rule(value, data, props)).filter(error =&gt; !!error)[0 /* first error */ ];
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >getBsFeedback(</span>value) {
+	var feedback;
+<span class="cstat-no" title="statement not covered" >	feedback = {};</span>
+<span class="cstat-no" title="statement not covered" >	if (value.touched) {</span>
+<span class="cstat-no" title="statement not covered" >		feedback = {</span>
+			hasFeedback: true,
+			bsStyle: value.valid ? 'success' : 'error',
+			help: value.touched &amp;&amp; (value.error ? value.error : '')
+		};
+	}
+<span class="cstat-no" title="statement not covered" >	return feedback;</span>
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >email(</span>value) {
+	// Let's not start a debate on email regex. This is just for an example app!
+<span class="cstat-no" title="statement not covered" >	if (!isEmpty(value) &amp;&amp; !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {</span>
+<span class="cstat-no" title="statement not covered" >		return 'Invalid email address';</span>
+	}
+}
+&nbsp;
+export function required(value) {
+	<span class="missing-if-branch" title="else path not taken" >E</span>if (isEmpty(value)) {
+		return 'Required';
+	}
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >minLength(</span>min) {
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >va</span>lue =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (!isEmpty(value) &amp;&amp; value.length &lt; min) {</span>
+<span class="cstat-no" title="statement not covered" >			return `Must be at least ${min} characters`;</span>
+		}
+	};
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >maxLength(</span>max) {
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >va</span>lue =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (!isEmpty(value) &amp;&amp; value.length &gt; max) {</span>
+<span class="cstat-no" title="statement not covered" >			return `Must be no more than ${max} characters`;</span>
+		}
+	};
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >integer(</span>value) {
+<span class="cstat-no" title="statement not covered" >	if (!Number.isInteger(Number(value))) {</span>
+<span class="cstat-no" title="statement not covered" >		return 'Must be an integer';</span>
+	}
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >oneOf(</span>enumeration) {
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >va</span>lue =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (!~enumeration.indexOf(value)) {</span>
+<span class="cstat-no" title="statement not covered" >			return `Must be one of: ${enumeration.join(', ')}`;</span>
+		}
+	};
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >match(</span>field) {
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >(v</span>alue, data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if (data) {</span>
+<span class="cstat-no" title="statement not covered" >			if (value !== data[field]) {</span>
+<span class="cstat-no" title="statement not covered" >				return 'Do not match';</span>
+			}
+		}
+	};
+}
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >arrayValidator(</span>rules) {
+<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >(d</span>ata = <span class="branch-0 cbranch-no" title="branch not covered" >[])</span> =&gt; {</span>
+		const errors = <span class="cstat-no" title="statement not covered" >[];</span>
+		const validator = <span class="cstat-no" title="statement not covered" >createValidator(rules);</span>
+<span class="cstat-no" title="statement not covered" >		data.forEach(<span class="fstat-no" title="function not covered" >va</span>lue =&gt; {</span>
+			const error = <span class="cstat-no" title="statement not covered" >validator(value);</span>
+<span class="cstat-no" title="statement not covered" >			if (error) {</span>
+<span class="cstat-no" title="statement not covered" >				errors.push(error);</span>
+			}
+		});
+<span class="cstat-no" title="statement not covered" >		return errors;</span>
+	};
+}
+&nbsp;
+export function createValidator(rules) {
+	return (data = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> props) =&gt; {
+		const errors = {};
+		Object.keys(rules).forEach((key) =&gt; {
+			const rule = join([].concat(rules[key])); // concat enables both functions and arrays of functions
+			const error = rule(data[key], data, props);
+			<span class="missing-if-branch" title="else path not taken" >E</span>if (error) {
+				errors[key] = error;
+			}
+		});
+		return errors;
+	};
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 14 2017 10:46:25 GMT-0500 (Eastern Standard Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

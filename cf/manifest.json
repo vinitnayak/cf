@@ -1,0 +1,44 @@
+{
+    "id": "5a4f99a6-dc55-4f8d-955c-35385c9e90a1",
+    "name": "ComplianceFactory",
+    "desc": " ComplianceFactory",
+    "badge": "cf",
+    "bundleName": "compliancefactory_bundle.js",
+    "version": "100",
+    "buildNo":"2018_01_05_CF",
+    "renderFunction": "renderApplication",
+    "macVersion":"1.0", 
+    "areas": [ {
+        "id":"bbd90ab7-2a84-4ad3-998e-705dbc73cdac",
+        "groupId":"Group1", 
+        "title": "Employee List",
+        "icon": "fa fa-briefcase",
+        "tooltip": "Employee List",
+        "renderName": "employeelist",
+        "visible": true
+    },{
+        "id":"e3344a6f-580f-4661-963e-a49ffd184b29",
+        "name":"Employee List Grid",
+        "groupname":"Group1", 
+        "title": "Employee List Grid",
+        "icon":"fa fa-wrench btn btn-circle-lg",
+        "tooltip": "Employee List Grid",
+        "rendername": "employeegrid",
+        "visible": true
+    }],
+    "widgets": [{
+        "id":"6a5a3e8d-7810-41bb-9025-20a955659279",
+        "name":"Monthly Payments",
+        "groupname":"Group1", 
+        "title": "Monthly Payments Chart",
+        "icon":"fa fa-bar-chart btn btn-circle-lg",
+        "tooltip": "Monthly Payments to User",
+        "rendername": "monthlypaymentschart",
+        "visible": true
+    }],
+    "search": [{
+        "id":"8536fa8e-a2c9-42d0-af52-bbb25a12d911",
+        "rendername": "searchAppModule",
+         "entities":[{"case":{"abbr":"c", "fields":["caseId","name","authority"]}}]
+    }]
+}
