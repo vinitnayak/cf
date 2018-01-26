@@ -11,10 +11,10 @@ var config ={
 	entry: [
 		'webpack-dev-server/client?http://localhost:8080', // WebpackDevServer host and port
 		'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-		APP_DIR + '/compliancefactory_index.js' // Your appʼs entry point
+		APP_DIR + '/cf_index.js' // Your appʼs entry point
 	],
   output: {
-    filename: 'compliancefactory_bundle.js',
+    filename: 'cf_bundle.js',
     path: path.resolve(__dirname, 'cf'),
     publicPath: '/'
   },
