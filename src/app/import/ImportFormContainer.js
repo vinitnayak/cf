@@ -32,7 +32,14 @@ const mapDispatchToProps = dispatch => {
 					console.log('Now dispatching action with type FORM_SUBMIT')
 					let fileNM = importobject.imp_file_nm[0].name;
 					console.log(fileNM);
-					var importtext= {"custid":"10102" ,"importdt": "2017-10-10","importtm":"10:10:10","type":"Import","importdata": "Garnishment","filename":fileNM}
+					var date = new Date().getDate();
+					var month = new Date().getMonth() + 1;
+					var year = new Date().getFullYear();
+					var dt = year + '-' + date + '-' + month;
+
+					var time = new Date(); 
+					var tm = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+					var importtext= {"custid":"10102" ,"importdt":dt,"importtm":tm,"type":"Import","importdata": "Garnishment","filename":fileNM}
 					console.log(importtext);
 					importobject = JSON.stringify(importtext);
 					importobject = JSON.parse(importobject)
