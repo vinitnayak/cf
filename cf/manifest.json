@@ -3,7 +3,7 @@
     "name": "ComplianceFactory",
     "desc": " ComplianceFactory",
     "badge": "cf",
-    "bundleName": "compliancefactory_bundle.js",
+    "bundleName": "cf_bundle.js",
     "version": "100",
     "buildNo":"2018_01_05_CF",
     "renderFunction": "renderApplication",
@@ -39,6 +39,6 @@
     "search": [{
         "id":"8536fa8e-a2c9-42d0-af52-bbb25a12d911",
         "rendername": "searchAppModule",
-         "entities":[{"case":{"abbr":"c", "fields":["caseId","name","authority"]}}]
+        "entities":[{"case":{"abbr":"c", "fields":["caseId","name","authority"]}}]
     }]
 }
