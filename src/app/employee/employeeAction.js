@@ -1,7 +1,5 @@
 import * as types from '../../base/constants/ActionTypes'
 import employeeApi from './employeeAPI';
-
-import ajax from 'superagent';
 export function authenticateWS() {
   console.log('I am authenticateWS...111');
   var username = 'CFWSUSER';
