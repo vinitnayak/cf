@@ -3,6 +3,7 @@ var path = require('path');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var BUILD_DIR = path.resolve(__dirname, 'dist');
 var RES_DIR = path.resolve(__dirname, 'res');
 var APP_DIR = path.resolve(__dirname, 'src');
@@ -71,6 +72,7 @@ var config ={
         port:'8080'
    },
    plugins: [
+    new CleanWebpackPlugin(['dist']),
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
     { from: './index.html', to: '../dist/index.html' },
