@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../../res_old/css/cfapp.css';
-import imgs from '../../../res_old/img/logo_FPO_c.png';
+import '../../css/cfapp.css';
+import imgs from '../../img/logo_FPO_c.png';
 const mmm = `.${imgs}`;
 class TestCss extends React.Component {
     render() {
