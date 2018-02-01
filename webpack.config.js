@@ -3,7 +3,7 @@ var path = require('path');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var BUILD_DIR = path.resolve(__dirname, 'cf');
+var BUILD_DIR = path.resolve(__dirname, 'dist');
 var RES_DIR = path.resolve(__dirname, 'res');
 var APP_DIR = path.resolve(__dirname, 'src');
 
@@ -16,7 +16,7 @@ var config ={
 	],
   output: {
     filename: 'cf_bundle.js',
-    path: path.resolve(__dirname, 'cf'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
   module: {
@@ -65,7 +65,7 @@ var config ={
   },
   devtool:"source-map",
   devServer: {
-        contentBase: './cf',
+        contentBase: './dist',
         hot: true,
         host:'localhost',
         port:'8080'
@@ -73,11 +73,18 @@ var config ={
    plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
-    { from: './cf.json', to: '../cf/cf.json' },
+    { from: './index.html', to: '../dist/index.html' },
+    { from: './manifest.json', to: '../dist/manifest.json' },
+    { from: './cf.json', to: '../dist/cf.json' },
     {
           context: './res',
           from: '**/*',
-          to: '../cf/res'
+          to: '../dist/res'
+    },
+    {
+      context: './jqwidgets',
+      from: '**/*',
+      to: '../dist/jqwidgets'
     }
     ])
   ]
