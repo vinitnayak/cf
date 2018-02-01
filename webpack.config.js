@@ -2,8 +2,9 @@ var webpack = require('webpack');
 var path = require('path');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var BUILD_DIR = path.resolve(__dirname, 'cf');
+var RES_DIR = path.resolve(__dirname, 'res');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 
@@ -70,7 +71,15 @@ var config ={
         port:'8080'
    },
    plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([
+    { from: './cf.json', to: '../cf/cf.json' },
+    {
+          context: './res',
+          from: '**/*',
+          to: '../cf/res'
+    }
+    ])
   ]
 };
 // Check if build is running in production mode, then change the sourcemap type

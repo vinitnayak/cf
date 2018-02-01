@@ -107,8 +107,9 @@ export function lastcc(){
 }
 export function loadEmployees() {
   //authenticateWS();
-    return function(dispatch) {
-        return employeeApi.getAllEmployee().then(emps => {
+    return function(dispatch,getState) {
+        const state = getState();
+        return employeeApi.getAllEmployee(state.appconf.SVCS_CONTEXT_URL).then(emps => {
           dispatch(loadEmployeeSuccess(emps));
         }).catch(error => {
           throw(error);
@@ -121,9 +122,9 @@ export function loadEmployeeSuccess(emps) {
 }
 
 export function saveEmployee(values) {
-  return function (dispatch) {
-    console.log(values);
-    return employeeApi.saveEmployee(values).then(values => {
+  return function (dispatch,getState) {
+    const state = getState();
+    return employeeApi.saveEmployee(values,state.appconf.SVCS_CONTEXT_URL).then(values => {
       dispatch(createEmployeeSuccess(values));
       return values;
     }).catch(error => {
@@ -138,8 +139,9 @@ export function createEmployeeSuccess(values) {
 }
 
 export function deleteEmployee(emp) {
-  return function(dispatch) {
-    return employeeApi.deleteEmployee(emp).then(() => {
+  return function(dispatch,getState) {
+    const state = getState();
+    return employeeApi.deleteEmployee(emp,state.appconf.SVCS_CONTEXT_URL).then(() => {
       console.log(`Deleted ${emp.id}`)
       dispatch(deleteEmployeeSuccess(emp));
       return;

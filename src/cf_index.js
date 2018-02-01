@@ -17,12 +17,22 @@ import ImportContainer from './app/import/ImportContainer.js';
 
 import TestCss from './app/sample/TestCss'
 import {Route,Switch,BrowserRouter as Router,Redirect,Link,b} from 'react-router-dom';
-
+import {getApiUrl} from './base/config/confAPI';
+import {getAppConf} from './base/config/confAction';
 
 let store = configureStore();
-store.dispatch(loadEmployees());
-store.dispatch(loadMonthlyChartData());
-store.dispatch(loadImportData());
+
+getApiUrl().then(appconf => {
+    console.log(appconf);
+    store.dispatch(getAppConf(appconf));
+    store.dispatch(loadEmployees());
+    store.dispatch(loadMonthlyChartData());
+    store.dispatch(loadImportData());
+}).catch(error => {
+    throw (error);
+});
+
+
 
 const anchor = '_compliancefactory_id';
 /**

@@ -1,5 +1,6 @@
 export default {
   emps: [],
   monthlychartdata:[],
-  importdata:[]
+  importdata:[],
+  appconf:{}
 }

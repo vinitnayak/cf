@@ -4,8 +4,9 @@ import axios from 'axios';
 import ajax from 'superagent';
 
 export function loadImportData() {
-      return function(dispatch) {
-          return importApi.getAllImportData().then(importdata => {
+      return function(dispatch,getState) {
+          const state = getState();
+          return importApi.getAllImportData(state.appconf.SVCS_CONTEXT_URL).then(importdata => {
             dispatch(loadImportSuccess(importdata));
           }).catch(error => {
             throw(error);
@@ -14,9 +15,9 @@ export function loadImportData() {
   }
 
 export function saveImport(values) {
-  return function (dispatch) {
-    console.log(values);
-    return importApi.saveImport(values).then(values => {
+  return function (dispatch,getState) {
+    const state = getState();
+    return importApi.saveImport(values,state.appconf.SVCS_CONTEXT_URL).then(values => {
       dispatch(loadImportData());
       return values;
     }).catch(error => {
@@ -36,8 +37,9 @@ export function loadImportSuccess(importdata) {
   }
 
   export function deleteImport(importrec) {
-    return function(dispatch) {
-      return importApi.deleteImport(importrec).then(() => {
+    return function(dispatch,getState) {
+      const state = getState();
+      return importApi.deleteImport(importrec,state.appconf.SVCS_CONTEXT_URL).then(() => {
         console.log(`Deleted ${importrec.id}`)
         dispatch(deleteImportSuccess(importrec));
         return;

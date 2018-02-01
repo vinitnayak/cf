@@ -5,8 +5,9 @@ export function loadMonthlyChartDataSuccess(monthlychartdata) {
     return {type:types.LOAD_MONTHLYCHART_DATA_SUCCESS, monthlychartdata};
 }
 export function loadMonthlyChartData() {
-    return function(dispatch) {
-        return paymentsApi.getMonthlyChartData().then(monthlychartdata => {
+    return function(dispatch,getState) {
+        const state = getState();
+        return paymentsApi.getMonthlyChartData(state.appconf.SVCS_CONTEXT_URL).then(monthlychartdata => {
         dispatch(loadMonthlyChartDataSuccess(monthlychartdata));
         }).catch(error => {
         throw(error);

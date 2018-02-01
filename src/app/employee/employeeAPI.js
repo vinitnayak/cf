@@ -1,15 +1,18 @@
-import * as svcs from '../../base/constants/ServiceUrls'
+import * as svcs from '../../base/constants/ServiceUrls';
+
 class employeeAPI {
-  static getAllEmployee() {
-    return fetch(svcs.EMPLOYEES_URL).then(response => {
+  static getAllEmployee(apiUrl) {
+   
+    var svcs_url = `${apiUrl}${svcs.EMPLOYEES_URL}`;
+    return fetch(svcs_url).then(response => {
       return response.json();
     }).catch(error => {
       return error;
     });
   }
-  static deleteEmployee(emp) {
-    var url = `${svcs.EMPLOYEES_URL}${emp.id}`;
-    return fetch(url, {
+  static deleteEmployee(emp,apiUrl) {
+    var svcs_url = `${apiUrl}${svcs.EMPLOYEES_URL}${emp.id}`;
+    return fetch(svcs_url, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -22,8 +25,9 @@ class employeeAPI {
       return error;
     });
   }
-  static saveEmployee(values) {
-    return fetch(svcs.EMPLOYEES_URL, {
+  static saveEmployee(values,apiUrl) {
+    var svcs_url = `${apiUrl}${svcs.EMPLOYEES_URL}`;
+    return fetch(svcs_url, {
       method: 'POST',
       body: JSON.stringify(values),
       headers: {
