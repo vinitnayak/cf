@@ -6,11 +6,10 @@ var exit = require('exit');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-var BUILD_DIR = path.resolve(__dirname, 'dist');
-var RES_DIR = path.resolve(__dirname, 'res');
-var APP_DIR = path.resolve(__dirname, 'src');
 
 
+const BUILD_DIR = path.resolve(__dirname, 'dist');
+const APP_DIR = path.resolve(__dirname, 'src');
 const port = 8080
 
 
