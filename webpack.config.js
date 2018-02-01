@@ -13,9 +13,7 @@ var APP_DIR = path.resolve(__dirname, 'src');
 
 const port = 8080
 
-var app = express()
-app.use('/', express.static(BUILD_DIR))
-app.listen(port)
+
 
 var config ={
 	entry: [	
@@ -96,5 +94,10 @@ if (process.env.NODE_ENV === "production") {
   // Offline plugin
   // Etc,
 }
+
+var app = express()
+app.use('/', express.static(BUILD_DIR))
+app.listen(port)
+
 module.exports = config;
 
