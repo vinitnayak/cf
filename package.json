@@ -9,9 +9,8 @@
   "version": "1.0.0",
   "description": "ComplianceFactory",
   "main": "compliancefactory_index.js",
-  "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js",
-    "build-dev": "webpack test",
+  "scripts": {    
+    "build-dev": "webpack --watch",
     "build-prod": "webpack -p",
     "test": "jest --coverage"
   },
@@ -25,6 +24,8 @@
     ]
   },
   "dependencies": {
+    "exit": "^0.1.2",
+    "express": "^4.16.2",
     "history": "^4.7.2",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
