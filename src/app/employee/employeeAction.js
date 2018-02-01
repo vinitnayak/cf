@@ -1,6 +1,6 @@
 import * as types from '../../base/constants/ActionTypes'
 import employeeApi from './employeeAPI';
-import axios from 'axios';
+
 import ajax from 'superagent';
 export function authenticateWS() {
   console.log('I am authenticateWS...111');
@@ -67,26 +67,6 @@ export function testRestfulCall() {
             });
         };
 
-export function authenticateWS121(){
-  let session_url = 'https://ssdev01:10443/SampleWS/r/v1/EchoService/echo2';
-  let username = 'CFWSUSER';
-  let password = 'bsi';
-  var credentials = btoa(username + ':' + password);
-  var BasicAuth = 'Basic ' + credentials;
-
-  axios.post(session_url,{
-    headers: {
-      'Authorization':'Basic '+username + ":" + password,
-      'Content-Type':'application/json'
-  }
-  }).then(function(response){
-    console.log('Authenticated');
-  })
-  .catch(function (error){
-    console.log('Error on Authentication with axios');
-  });
- 
-}
 export function lastcc(){
   let url = 'https://ssdev01:10443/SampleWS/r/v1/EchoService/echo2';
   let username = 'CFWSUSER';

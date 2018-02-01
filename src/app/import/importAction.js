@@ -1,6 +1,5 @@
 import * as types from '../../base/constants/ActionTypes';
 import importApi from './importAPI';
-import axios from 'axios';
 import ajax from 'superagent';
 
 export function loadImportData() {
