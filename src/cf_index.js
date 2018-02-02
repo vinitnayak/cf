@@ -16,7 +16,7 @@ import {loadImportData} from './app/import/importAction';
 import ImportContainer from './app/import/ImportContainer.js';
 
 import TestCss from './app/sample/TestCss'
-import Mpd from './app/mpd/Mpd.js'
+import Mpd from './app/payrollintg/Mpd.js'
 import {Route,Switch,BrowserRouter as Router,Redirect,Link,b} from 'react-router-dom';
 import {getApiUrl} from './base/config/confAPI';
 import {getAppConf} from './base/config/confAction';

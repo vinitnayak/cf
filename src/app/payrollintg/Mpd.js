@@ -46,7 +46,7 @@ render(){
 	
         </div>
         <div id="quarterly" class="btn-group collapse " >
-        <button type="button" class="btn btn-primary " data-toggle="toggle">
+        <button type="button" class="btn btn-default" data-toggle="toggle">
        Quarterly1
       </button>
 	   <button type="button" class="btn btn-primary  " data-toggle="toggle">
