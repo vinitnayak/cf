@@ -10,44 +10,157 @@
     <link rel="stylesheet" href="./res/css/jqx.base.css" type="text/css" />
     <link rel="stylesheet" href="./cfapp.css" type="text/css" />
     <script type="text/javascript" src="./res/js/jqx-all.js"></script>
+    <style>
+      .navbar-global {
+        background-color: rgb(83, 83, 83);
+      }
+    
+      .navbar-global .navbar-brand {
+        color: white;
+      }
+    
+      .navbar-global .navbar-user>li>a {
+        color: white;
+      }
+    
+      .navbar-primary {
+        background-color: #333;
+        bottom: 0px;
+        left: 0px;
+        position: absolute;
+        top: 51px;
+        width: 200px;
+        z-index: 8;
+        overflow: hidden;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+      }
+    
+      .navbar-primary.collapsed {
+        width: 60px;
+      }
+    
+      .navbar-primary.collapsed .glyphicon {
+        font-size: 22px;
+      }
+    
+      .navbar-primary.collapsed .nav-label {
+        display: none;
+      }
+    
+      .btn-expand-collapse {
+        position: absolute;
+        display: block;
+        left: 0px;
+        bottom: 0;
+        width: 100%;
+        padding: 8px 0;
+        border-top: solid 1px #666;
+        color: grey;
+        font-size: 20px;
+        text-align: center;
+      }
+    
+      .btn-expand-collapse:hover,
+      .btn-expand-collapse:focus {
+        background-color: #222;
+        color: white;
+      }
+    
+      .btn-expand-collapse:active {
+        background-color: #111;
+      }
+    
+      .navbar-primary-menu,
+      .navbar-primary-menu li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    
+      .navbar-primary-menu li a {
+        display: block;
+        padding: 10px 18px;
+        text-align: left;
+        border-bottom: solid 1px #444;
+        color: #ccc;
+      }
+    
+      .navbar-primary-menu li a:hover {
+        background-color: #000;
+        text-decoration: none;
+        color: white;
+      }
+    
+      .navbar-primary-menu li a .glyphicon {
+        margin-right: 6px;
+      }
+    
+      .navbar-primary-menu li a:hover .glyphicon {
+        color: orchid;
+      }
+    
+      .main-content {
+        margin-top: 60px;
+        margin-left: 200px;
+        padding: 20px;
+      }
+    
+      .collapsed+.main-content {
+        margin-left: 60px;
+      }
+    </style>
    </head>
-   <body>
+   <body onload="loadspa();">
       <nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Santhosh Vertical Nav Project</a>
+              <a class="navbar-brand" href="#" onclick="loadspa();">Application Module UI</a>
             </div>
-            <div id="navbar" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav navbar-user navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Santhosh Giridara</a></li>
-                <li><a href="#about"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-              </ul>
-            </div><!--/.nav-collapse -->
           </div>
         </nav>
-    <nav class="navbar-primary">
+      <nav class="navbar-primary" id="navid">
       <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
       <ul class="navbar-primary-menu">
         <li>
-          <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
-          <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Profile</span></a>
-          <a href="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Settings</span></a>
-          <a href="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Notification</span></a>
-          <a href="#"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Monitor</span></a>
+          <a href="#" onclick="return loadspa('spa1')"><span class="nav-label">Employee List</span></a>
+          <a href="#" onclick="return loadspa('spa2')"><span class="nav-label">Employee Grid</span></a>
+          <a href="#" onclick="return loadspa('spa3')"><span class="nav-label">Monthly Payments Chart</span></a>
+          <a href="#" onclick="return loadspa('spa4')"><span class="nav-label">Add Employee</span></a>
+          <a href="#" onclick="return loadspa('spa5')"><span class="nav-label">Import/Upload</span></a>
+          <a href="#" onclick="return loadspa('spa6')"><span class="nav-label">Test Css</span></a>
         </li>
       </ul>
     </nav>
-    <div class="main-content">
-    <h1> I am the main content </h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem sint assumenda quae aliquid voluptatibus quia, ea, ad natus magni repellat earum, culpa iure tempore. Enim dolor eaque minima voluptas ducimus?</p>
-    </div>
-      <div id = "_compliancefactory_id"></div>
-      <script type="text/javascript" src="cf_bundle.js"></script>
+    <div id = "_compliancefactory_id" class="main-content"></div>
+    <script type="text/javascript" src="cf_bundle.js"></script>
+    <script type="text/javascript">
+      function loadspa(spa) {
+          unMountNMountContainerNode();
+          if(spa=='spa1'){
+            renderApplication('_compliancefactory_id','employeelist');
+          }else if(spa=='spa2'){
+            renderApplication('_compliancefactory_id','employeegrid');
+          }else if(spa=='spa3'){
+            renderApplication('_compliancefactory_id','monthlypaymentschart');
+          }else if(spa=='spa4'){
+            renderApplication('_compliancefactory_id','addemployee');
+          }else if(spa=='spa5'){
+            renderApplication('_compliancefactory_id','importupload');
+          }else if(spa=='spa6'){
+            renderApplication('_compliancefactory_id','testcss');
+          }else{
+            renderWelcomePage('_compliancefactory_id');
+          }
+      }
+      function renderWelcomePage(elem){
+        document.getElementById(elem).innerHTML="<h3>Welcome to the Application Module Test Page. Please click on the links to load your single page application.</h4>";
+      }
+      function unMountNMountContainerNode(){
+        $("div").remove("#_compliancefactory_id");
+        $("<div id=\"_compliancefactory_id\" class=\"main-content\"></div>").insertAfter( $("#navid"));
+    }
+     </script>
     </body>
 </html>

@@ -82,7 +82,7 @@ class ImportFormComponent extends Component {
 		const { handleSubmit} = this.props
 		return (
 			<div>
-            <h1>Import Employee</h1>
+            <h1>Import/Upload</h1>
             <form onSubmit={handleSubmit((event)=>this.mySubmit(event))}>
             <Field name="imp_file_nm" label="Select File For Import" type="file" component={customFileInput}/>
             <button type="submit" className="btn btn-primary">Import Employee</button>

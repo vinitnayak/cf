@@ -31,39 +31,6 @@ getApiUrl().then(appconf => {
 }).catch(error => {
     throw (error);
 });
-
-
-
-const anchor = '_compliancefactory_id';
-/**
- * render function master
- * This is added for the local testing of application UI. 
- * Please comment this for production or Testing with MAC.
- */
-ReactDOM.render(
-    <Provider store={store}>
-    <Router>
-        <div>
-            <div><Link to="/">Employee List</Link></div>
-            <div><Link to="/employeegrid">Employee List Grid</Link></div>
-            <div><Link to="/monthlypaymentschart">Monthly Payments Chart</Link></div>
-            <div><Link to="/addemployee">Add Employee</Link></div>
-            <div><Link to="/importsample">Import Sample</Link></div>
-            <div><Link to="/testcss">Test CSS</Link></div>
-            <Switch>
-                 <Route exact path='/' render={() => (<Redirect to="/employeelist"/>)}/>
-                 <Route exact path='/employeelist' component={EmployeeListContainer}></Route>
-                 <Route exact path='/employeegrid' component={GrdReportComponent}></Route>
-                 <Route exact path='/monthlypaymentschart' component={MonthlyPaymentChartContainer}></Route>
-                 <Route exact path='/addemployee' component={EmployeeFormContainer}></Route>
-                 <Route exact path='/importsample' component={ImportContainer}></Route>
-                 <Route exact path='/testcss' component={TestCss}></Route>
-            </Switch>
-        </div>
-    </Router>
-    </Provider>
-    ,
-    document.getElementById(anchor));
 /**
  * renderApplication
  * @param {*} elem 
@@ -81,6 +48,10 @@ function renderApplication(elem,path){
         renderApplicationMain(elem);
     }else if(path==='monthlypaymentschart'){
         renderMonthlyPaymentsChart(elem);
+    }else if(path==='importupload'){
+        renderImportUI(elem);
+    }else if(path==='testcss'){
+        renderTestCss(elem);
     }
 }
 /**
@@ -133,6 +104,10 @@ function renderImportUI(elem) {
     ReactDOM.render(<Provider store={store}>
         <ImportContainer/>
         </Provider>,
+        document.getElementById(elem));
+}
+function renderTestCss(elem) {
+    ReactDOM.render(<TestCss/>,
         document.getElementById(elem));
 }
 module.exports = renderApplication;

@@ -16,7 +16,6 @@ class ImportContainer extends Component {
         console.log(importdata);
         if(importdata && importdata.length >0){
             return(<div className="cBox boxTools col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-            <h1>Import</h1>
             <ImportFormContainer/>
             <div>
                 <ul>
@@ -31,7 +30,6 @@ class ImportContainer extends Component {
             </div>);
         }else {
             return(<div className="cBox boxTools col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-            <h1>Import</h1>
             <ImportFormContainer/>
             <p/>
             <div>No data available</div>
