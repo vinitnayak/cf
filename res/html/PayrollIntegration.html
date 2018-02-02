@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Periodic Record</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--link rel="stylesheet" href="styles.css"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+<div  >
+    <h3>Maintain Payroll Data</h3>
+    <label>Select File Type:</label>
+    <div class="btn-group">
+    <button type="button" class="btn btn-primary " data-toggle="collapse" data-target="#periodic">
+    Periodic
+   </button>
+   <button type="button" class="btn btn-primary  " data-toggle="collapse" data-target="#quarterly">
+    Quarterly
+   </button>
+   </div>
+   <br/>
+   <div id="periodic" class="btn-group collapse "  >
+   <button type="button" class="btn btn-primary  " data-toggle="toggle">
+   Company
+  </button>
+  <button type="button" class="btn btn-primary  " data-toggle="toggle" >
+   Authority
+  </button>
+
+    </div>
+    <div id="quarterly" class="btn-group collapse "  >
+    <button type="button" class="btn btn-primary " data-toggle="toggle">
+   Quarterly1
+  </button>
+   <button type="button" class="btn btn-primary  " data-toggle="toggle">
+   Quarterly2
+  </button>
+ 
+  <button type="button" class="btn btn-primary " data-toggle="toggle" >
+  Quarterly3
+  </button>
+
+    </div>
+  
+  <div/>
+  <div >
+  <label>Select Payroll By:</label>
+  <label>
+    <input type="radio"  value="option1" checked={this.state.selectedOption === 'option1'} onChange={this.handleOptionChange} />
+    Check Date
+  </label>
+  <label>
+    <input type="radio"   value="option2" checked={this.state.selectedOption === 'option2'} onChange={this.handleOptionChange} />
+    Payroll Run Date
+  </label>
+  </div>
+  <div class="form-group"  >
+  
+  <label>From Date:</label>
+  <div class="container">
+
+<div class='col-sm-2'>
+       
+            <div class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    
+  
+  
+</div>
+  </div>
+  <div class="form-group" >
+  <label>To Date:</label>
+
+  <div class="container">
+  <div class='col-sm-2'>
+         
+              <div class='input-group date' id='datetimepicker1'>
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+          
+      </div>
+    
+    
+</div>
+
+  </div>
+  <button type="submit" className="btn btn-primary ">Use Default Values</button>
+  <button type="submit" className="btn btn-primary ">View Selected</button>
+  <button type="submit" className="btn btn-primary">Add Periodic Data</button>
+ 
+  
+  </div>
+
+</body>
+</html>

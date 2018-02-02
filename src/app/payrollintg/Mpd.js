@@ -45,8 +45,8 @@ render(){
       </button>
 	
         </div>
-        <div id="quarterly" class="btn-group collapse " >
-        <button type="button" class="btn btn-default" data-toggle="toggle">
+        <div id="quarterly" class="btn-group collapse " style={{display:'none'}} >
+        <button type="button" class="btn btn-primary" data-toggle="toggle">
        Quarterly1
       </button>
 	   <button type="button" class="btn btn-primary  " data-toggle="toggle">
