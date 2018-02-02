@@ -6,7 +6,7 @@ var exit = require('exit');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname, 'src');
@@ -24,7 +24,7 @@ var config ={
     publicPath: '/'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -33,16 +33,12 @@ var config ={
         
       },
       {
-            test: /\.css$/,
-            loader: 'style-loader'
-      },
-      {
-            test: /\.css$/,
-            loader: 'css-loader',
-            query: {
-            modules: true,
-            localIdentName: '[name]__[local]___[hash:base64:5]'
-            }
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader",
+          publicPath: "/dist"
+        })
       },
       {
         test: /\.(jpg|png|gif|svg|pdf|ico)$/,
@@ -81,7 +77,8 @@ var config ={
             from: '**/*',
             to: '../dist/res'
       }
-    ])
+    ]),
+    new ExtractTextPlugin({filename: 'cfapp.css', allChunks: true})
   ]
 };
 // Check if build is running in production mode, then change the sourcemap type
