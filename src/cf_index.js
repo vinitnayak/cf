@@ -17,7 +17,7 @@ import ImportContainer from './app/import/ImportContainer.js';
 
 import TestCss from './app/sample/TestCss';
 import Mpd from './app/payrollintg/Mpd.js';
-
+import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 import PeriodicByCompanyGrid from './app/payrollintg/PeriodicByCompanyGrid.jsx';
 import PeriodicByAuthorityGrid from './app/payrollintg/PeriodicByAuthorityGrid.jsx';
 
@@ -59,14 +59,29 @@ function renderApplication(elem,path){
         renderTestCss(elem);
     }else if(path==='mpd'){
         renderMpd(elem);
-    }
-    else if(path==='periodiccomp'){
+    }else if(path==='periodiccomp'){
         renderPeriodicByCompany(elem);
     }else if(path==='periodicauth'){
         renderPeriodicByAuthority(elem);
+    }else if(path==='filterpayrolldata'){
+        renderFilterPayrollData(elem);
     }
 }
-
+/**
+ * renderFilterPayrollData
+ * @param {*} elem 
+ */
+function renderFilterPayrollData(elem) {
+    ReactDOM.render(
+        <Provider store={store}>
+        <FilterPayrollData/>
+        </Provider>,
+        document.getElementById(elem));
+}
+/**
+ * renderMpd
+ * @param {*} elem 
+ */
 function renderMpd(elem) {
     ReactDOM.render(
         <Provider store={store}>
@@ -74,6 +89,10 @@ function renderMpd(elem) {
         </Provider>,
         document.getElementById(elem));
 }
+/**
+ * renderPeriodicByCompany
+ * @param {*} elem 
+ */
 function renderPeriodicByCompany(elem) {
     ReactDOM.render(
         <Provider store={store}>
@@ -81,6 +100,10 @@ function renderPeriodicByCompany(elem) {
         </Provider>,
         document.getElementById(elem));
 }
+/**
+ * renderPeriodicByAuthority
+ * @param {*} elem 
+ */
 function renderPeriodicByAuthority(elem) {
     ReactDOM.render(
         <Provider store={store}>

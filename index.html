@@ -133,6 +133,7 @@
           <a href="#" onclick="return loadspa('spa7')"><span class="nav-label"><i class="far fa-money-bill-alt"></i> Maintain Payroll Data</span></a>
           <a href="#" onclick="return loadspa('spa8')"><span class="nav-label"><i class="far fa-money-bill-alt"></i> PeriodicBy Company Grid</span></a>
           <a href="#" onclick="return loadspa('spa9')"><span class="nav-label"><i class="far fa-money-bill-alt"></i> PeriodicBy Authority Grid</span></a>
+          <a href="#" onclick="return loadspa('spa10')"><span class="nav-label"><i class="far fa-address-card"></i> Filter Payroll Data</span></a>
         </li>
       </ul>
     </nav>
@@ -159,6 +160,8 @@
             renderApplication('_compliancefactory_id','periodiccomp');
           }else if(spa=='spa9'){
             renderApplication('_compliancefactory_id','periodicauth');
+          }else if(spa=='spa10'){
+            renderApplication('_compliancefactory_id','filterpayrolldata');
           }else{
             renderWelcomePage('_compliancefactory_id');
           }
