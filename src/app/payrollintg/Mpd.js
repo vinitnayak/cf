@@ -48,7 +48,7 @@ render(){
    
     <Collapse in={this.state.periodic} >
     <div style={divStyle} >
-    Hii
+    
       <ButtonGroup
        type="checkbox"
         >
