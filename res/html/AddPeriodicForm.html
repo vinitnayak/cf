@@ -15,25 +15,24 @@
 <body>
 
 
-  <div>
+  <div class="container " style="width:500px;">
         <h1>Add Periodic Data</h1>
 	<div align="center">
 	 <button type="submit" class="btn btn-primary">Save</button>
       <button type="submit" class="btn btn-primary">Cancel</button>
-		<button type="button" class="btn btn-primary  " data-toggle="collapse" data-target="#demo">
-          <span class="glyphicon glyphicon-plus "></span> AdditionalFields
-       </button>
+		
 	
      </div>
-	 <div class="panel panel-primary">
-		<div class="panel-body">
-        <form>
-        <div class="form-group">
+	 <div class="panel panel-primary" >
+		<div class="panel-body" >
+		<div style="height:500px; overflow:scroll" >
+        <form >
+        <div class="form-group" >
 		 
         <label for="formGroupExampleInput2">*Company Name:</label>
         
         <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">
-            Kronos Company
+            Kronos Company<span class="caret" ></span>
         </button>
         <div class="dropdown-menu">
         <a class="dropdown-item" href="#">Link 1</a>
@@ -55,26 +54,17 @@
 		<input type="text"  class="form-control" id="formGroupExampleInput2" >
 	
 	</div>
-	 <div >
+	 <div class="form-group">
 	 
       <label>Check Date:</label>
 
      
-      <div class="container">
-	  <div class="row">
-      <div class='col-sm-12'>
-              <div class="form-group">
-                  <div class='input-group date' id='datetimepicker1'>
-                      <input type='text' class="form-control" />
-                      <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                  </div>
-              </div>
+      <div class='input-group ' id='datetimepicker1' >
+              <input type='date' class="form-control" />
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
           </div>
-       </div>   
-        
-  </div>
      
         
  
@@ -91,7 +81,7 @@
         <label for="formGroupExampleInput2">*Resident Code:</label>
         
         <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">
-            Resident
+            Resident <span class="caret"></span>
         </button>
         <div class="dropdown-menu">
         <a class="dropdown-item" href="#">Link 1</a>
@@ -152,8 +142,18 @@
 </div>
 
   </div>
+  <div class="form-group" style="float:right" data-toggle="collapse" data-target="#demo">
+<a  href="#"><span   class="  glyphicon glyphicon-plus "></span> AdditionalFields</a>
+</div>
+
+<div align="center">
+	 <button type="submit" class="btn btn-primary">Save</button>
+      <button type="submit" class="btn btn-primary">Cancel</button>
+		
+	
+     </div>
       <form>
-	  	
+	  </div>
 	
 
   

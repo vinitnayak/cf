@@ -15,8 +15,12 @@ import MonthlyPaymentChartContainer from './app/payments/MonthlyPaymentChartCont
 import {loadImportData} from './app/import/importAction';
 import ImportContainer from './app/import/ImportContainer.js';
 
-import TestCss from './app/sample/TestCss'
-import Mpd from './app/payrollintg/Mpd.js'
+import TestCss from './app/sample/TestCss';
+import Mpd from './app/payrollintg/Mpd.js';
+
+import PeriodicByCompanyGrid from './app/payrollintg/PeriodicByCompanyGrid.jsx';
+import PeriodicByAuthorityGrid from './app/payrollintg/PeriodicByAuthorityGrid.jsx';
+
 import {Route,Switch,BrowserRouter as Router,Redirect,Link,b} from 'react-router-dom';
 import {getApiUrl} from './base/config/confAPI';
 import {getAppConf} from './base/config/confAction';
@@ -56,12 +60,31 @@ function renderApplication(elem,path){
     }else if(path==='mpd'){
         renderMpd(elem);
     }
+    else if(path==='periodiccomp'){
+        renderPeriodicByCompany(elem);
+    }else if(path==='periodicauth'){
+        renderPeriodicByAuthority(elem);
+    }
 }
 
 function renderMpd(elem) {
     ReactDOM.render(
         <Provider store={store}>
         <Mpd/>
+        </Provider>,
+        document.getElementById(elem));
+}
+function renderPeriodicByCompany(elem) {
+    ReactDOM.render(
+        <Provider store={store}>
+        <PeriodicByCompanyGrid/>
+        </Provider>,
+        document.getElementById(elem));
+}
+function renderPeriodicByAuthority(elem) {
+    ReactDOM.render(
+        <Provider store={store}>
+        <PeriodicByAuthorityGrid/>
         </Provider>,
         document.getElementById(elem));
 }

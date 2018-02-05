@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Add Periodic Record</title>
+  <title>Maintain Payroll Data</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--link rel="stylesheet" href="styles.css"-->
@@ -13,97 +13,116 @@
   
 </head>
 <body>
-<div  >
+   
+  <div class="container" style="width:500px" >
     <h3>Maintain Payroll Data</h3>
-    <label>Select File Type:</label>
-    <div class="btn-group">
-    <button type="button" class="btn btn-primary " data-toggle="collapse" data-target="#periodic">
-    Periodic
-   </button>
-   <button type="button" class="btn btn-primary  " data-toggle="collapse" data-target="#quarterly">
+    <form>
+    <div class="form-group ">
+      
+    <label >Select File Type:</label>
+    
+  
+    <div class="btn-group " style="float:right;width:310px" >
+       
+    <button type="button" class=" btn btn-primary " data-toggle="collapse" data-target="#periodic">
+        Periodic
+    </button>
+    <button type="button" class="btn btn-primary  " data-toggle="collapse" data-target="#quarterly"style=" float: left; margin-left: 4px ">
     Quarterly
-   </button>
-   </div>
-   <br/>
-   <div id="periodic" class="btn-group collapse "  >
-   <button type="button" class="btn btn-primary  " data-toggle="toggle">
-   Company
-  </button>
-  <button type="button" class="btn btn-primary  " data-toggle="toggle" >
-   Authority
-  </button>
-
+    </button>
     </div>
-    <div id="quarterly" class="btn-group collapse "  >
+    </div>
+    
+
+    <div class="form-group"  >
+      
+    <div id="periodic" class="btn-group collapse " style="float:right;width:310px"   >
+      
+    <button type="button" class="btn btn-primary  " data-toggle="toggle" >
+    Company
+   </button>
+   <button type="button" class="btn btn-primary  " style=" float: left; margin-left: 4px " data-toggle="toggle" >
+    Authority
+   </button>
+ 
+     </div>
+    </div>
+    <div class="form-group" style="display:none">
+    <div id="quarterly" class="btn-group collapse form-control " >
     <button type="button" class="btn btn-primary " data-toggle="toggle">
    Quarterly1
   </button>
-   <button type="button" class="btn btn-primary  " data-toggle="toggle">
+   <button type="button" class="btn btn-primary  " style=" float: left; margin-left: 4px " data-toggle="toggle">
    Quarterly2
   </button>
  
-  <button type="button" class="btn btn-primary " data-toggle="toggle" >
+  <button type="button" class="btn btn-primary  " style=" float: left; margin-left: 4px " data-toggle="toggle" >
   Quarterly3
   </button>
 
     </div>
+    </div>
+    
   
-  <div/>
-  <div >
-  <label>Select Payroll By:</label>
-  <label>
-    <input type="radio"  value="option1" checked={this.state.selectedOption === 'option1'} onChange={this.handleOptionChange} />
-    Check Date
-  </label>
-  <label>
-    <input type="radio"   value="option2" checked={this.state.selectedOption === 'option2'} onChange={this.handleOptionChange} />
-    Payroll Run Date
-  </label>
-  </div>
-  <div class="form-group"  >
-  
-  <label>From Date:</label>
-  <div class="container">
-
-<div class='col-sm-2'>
+    <br/>
+    <br/>
+      <div class="form-group " >
+      
+      <label>Select Payroll By:   </label>
+     
+      <label >
+        <input type="radio"  value="option1" checked={this.state.selectedOption === 'option1'} onChange={this.handleOptionChange} />
+        Check Date
+      </label>
+      <label>
+        <input type="radio"   value="option2"  onChange={this.handleOptionChange} />
+        Payroll Run Date
+      </label>
+     
+    </div>
+    <div class="form-group ">
+        <label>From Date:</label>
        
-            <div class='input-group date' id='datetimepicker1'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
+        <div class='input-group ' id='datetimepicker1' style="float:left;margin-right:450px">
+            <input type='date' class="form-control" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
         </div>
+        </div>
+     
+      
+    
     
   
-  
-</div>
-  </div>
-  <div class="form-group" >
-  <label>To Date:</label>
-
-  <div class="container">
-  <div class='col-sm-2'>
-         
-              <div class='input-group date' id='datetimepicker1'>
-                  <input type='text' class="form-control" />
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-              </div>
+      <div class="form-group"  >
+      <label>To Date:</label>
+      
+    
           
-      </div>
-    
-    
+     
+          <div class='input-group ' id='datetimepicker1' style="float:left;margin-right:450px">
+              <input type='date' class="form-control" />
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+       
+        
+     
+      
+    </div>
+    <br/>
+    <br/>
+    <div class="form-group">
+      
+    <button type="submit" class="btn btn-primary  "  style=" float: left; margin-left: 4px ">Use Default Values</button>
+<button type="submit" class="btn btn-primary  "style=" float: left; margin-left: 4px ">View Selected</button>
+<button type="submit" class="btn btn-primary " style=" float: left; margin-left: 6px ">Add Periodic Data</button>
 </div>
 
-  </div>
-  <button type="submit" className="btn btn-primary ">Use Default Values</button>
-  <button type="submit" className="btn btn-primary ">View Selected</button>
-  <button type="submit" className="btn btn-primary">Add Periodic Data</button>
- 
-  
-  </div>
 
+</form>
+    </div>
 </body>
 </html>
