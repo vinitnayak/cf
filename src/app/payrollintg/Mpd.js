@@ -34,7 +34,7 @@ class Mpd extends React.Component {
         <div>
           <label>Select File Type:</label>
 
-          <div style={divStyle} >
+          <div class="form-group " style={divStyle} >
             <ButtonGroup
               type="checkbox"
               onChange={this.toggle}
@@ -47,7 +47,7 @@ class Mpd extends React.Component {
           </div>
 
           <Collapse in={this.state.periodic} >
-            <div style={divStyle} >
+            <div class="form-group " style={divStyle} >
 
               <ButtonGroup
                 type="checkbox"
@@ -59,7 +59,7 @@ class Mpd extends React.Component {
           </Collapse>
 
           <Collapse in={this.state.quarterly} >
-            <div style={divStyle}>
+            <div class="form-group "style={divStyle}>
               <ButtonGroup
                 type="checkbox"
               >
@@ -73,50 +73,49 @@ class Mpd extends React.Component {
         <br />
         <br />
         <div />
-        <div >
+        <div class="form-group " >
           <label>Select Payroll By:</label>
-          <label>
-            <input type="radio" value="option1" checked={this.state.selectedOption === 'option1'} onChange={this.handleOptionChange} />
-            Check Date
+          <div style={divStyle}>
+            <label>
+              <input type="radio" value="option1" checked={this.state.selectedOption === 'option1'} onChange={this.handleOptionChange} />
+              Check Date
           </label>
-          <label>
-            <input type="radio" value="option2" checked={this.state.selectedOption === 'option2'} onChange={this.handleOptionChange} />
-            Payroll Run Date
+            <label>
+              <input type="radio" value="option2" checked={this.state.selectedOption === 'option2'} onChange={this.handleOptionChange} />
+              Payroll Run Date
       </label>
+          </div>
         </div>
-        <div >
+        <div class="form-group " >
           <label>From Date:</label>
-
-          <div className='input-group ' id='datetimepicker1' style={{ float: 'left', marginRight: 400, width: 300 }}>
-            <input type='date' className="form-control" />
-            <span className="input-group-addon">
-              <span className="glyphicon glyphicon-calendar"></span>
-            </span>
+          <div style={{ float: 'right', width: 240, marginRight: 100 }}>
+            <div className='input-group ' id='datetimepicker1' >
+              <input type='date' className="form-control" />
+              <span className="input-group-addon">
+                <span className="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
           </div>
         </div>
-        <div   >
+
+        <div class="form-group ">
           <label>To Date:</label>
-
-
-
-
-          <div className='input-group ' id='datetimepicker1' style={{ float: 'left', marginRight: 200, width: 300 }}>
-            <input type='date' className="form-control" />
-            <span className="input-group-addon">
-              <span className="glyphicon glyphicon-calendar"></span>
-            </span>
+          <div style={{ float: 'right', width: 240, marginRight: 100 }}>
+            <div className='input-group ' id='datetimepicker1'  >
+              <input type='date' className="form-control" />
+              <span className="input-group-addon">
+                <span className="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
           </div>
-
-
-
-
         </div>
         <br />
         <br />
-        <button type="submit" style={{ float: 'left' }} className="btn btn-primary btn-sm ">Use Default Values</button>
-        <button type="submit" style={{ float: 'left', marginLeft: 4 }} className="btn btn-primary btn-sm ">View Selected</button>
-        <button type="submit" style={{ float: 'left', marginLeft: 4 }} className="btn btn-primary btn-sm">Add Periodic Data</button>
-
+        <div class="form-group">
+          <button type="submit" style={{ float: 'left' }} className="btn btn-primary btn-sm ">Use Default Values</button>
+          <button type="submit" style={{ float: 'left', marginLeft: 4 }} className="btn btn-primary btn-sm ">View Selected</button>
+          <button type="submit" style={{ float: 'left', marginLeft: 4 }} className="btn btn-primary btn-sm">Add Periodic Data</button>
+        </div>
 
       </div>
 
