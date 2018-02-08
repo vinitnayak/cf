@@ -37,7 +37,8 @@ getApiUrl().then(appconf => {
     throw (error);
 });
 /**
- * renderApplication
+ * renderApplication 
+ * master branch
  * @param {*} elem 
  * @param {*} path 
  */
