@@ -20,7 +20,6 @@ import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 import PeriodicByCompanyGrid from './app/payrollintg/PeriodicByCompanyGrid.jsx';
 import PeriodicByAuthorityGrid from './app/payrollintg/PeriodicByAuthorityGrid.jsx';
 
-import {Route,Switch,BrowserRouter as Router,Redirect,Link,b} from 'react-router-dom';
 import {getApiUrl} from './base/config/confAPI';
 import {getAppConf} from './base/config/confAction';
 
