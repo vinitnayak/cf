@@ -19,7 +19,7 @@ var config ={
 		APP_DIR + '/cf_index.js' // Your appʼs entry point
 	],
   output: {
-    filename: 'cf_bundle.js',
+    filename: 'cfBundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
