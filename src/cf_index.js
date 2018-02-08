@@ -16,7 +16,6 @@ import {loadImportData} from './app/import/importAction';
 import ImportContainer from './app/import/ImportContainer.js';
 
 import TestCss from './app/sample/TestCss';
-import Mpd from './app/payrollintg/Mpd.js';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 import PeriodicByCompanyGrid from './app/payrollintg/PeriodicByCompanyGrid.jsx';
 import PeriodicByAuthorityGrid from './app/payrollintg/PeriodicByAuthorityGrid.jsx';
@@ -58,8 +57,6 @@ function renderApplication(elem,path){
         renderImportUI(elem);
     }else if(path==='testcss'){
         renderTestCss(elem);
-    }else if(path==='mpd'){
-        renderMpd(elem);
     }else if(path==='periodiccomp'){
         renderPeriodicByCompany(elem);
     }else if(path==='periodicauth'){
