@@ -78,7 +78,7 @@ var config ={
             to: '../dist/res'
       }
     ]),
-    new ExtractTextPlugin({filename: 'cfapp.css', allChunks: true})
+    new ExtractTextPlugin({filename: 'cfBundle.css', allChunks: true})
   ]
 };
 // Check if build is running in production mode, then change the sourcemap type
