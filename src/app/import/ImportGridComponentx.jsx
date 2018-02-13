@@ -29,7 +29,7 @@ class ImportGridComponentx extends React.Component {
     }
 
     componentDidMount() {
-       console.log(this.refs.importGrid);
+       //console.log(this.refs.importGrid);
     }
     componentDidUpdate(){
         console.log(this.refs.importGrid);
@@ -41,7 +41,7 @@ class ImportGridComponentx extends React.Component {
     render() {
         const deleteImport = (id)=>{
         console.log(id);
-          alert(this.refs.importGrid.getrowdata(id));
+          //alert(this.refs.importGrid.getrowdata(id));
         }
         let dataAdapter = new $.jqx.dataAdapter(this.state.source);
 

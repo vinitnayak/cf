@@ -72,7 +72,7 @@ class ImportFormComponent extends Component {
       });
      console.log(values.imp_file_nm[0]);
 		return this.props.onSave(values).then(response => {
-      this.props.reset()
+      //this.props.reset()
      	return response
 		}).catch(error => {
 			throw new SubmissionError(error)
