@@ -7,7 +7,6 @@ import  { saveImport ,loadImportData}  from './importAction';
 
 export const formName1 = 'entry-formxx';
 const afterSubmit = (result, dispatch) => dispatch(reset(formName1));
-const afterSubmitxx = () => test();
 let ImportFormContainer = reduxForm({
 	form: formName1,
 	onSubmitSuccess: afterSubmit,
