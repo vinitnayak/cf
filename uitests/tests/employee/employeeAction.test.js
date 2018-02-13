@@ -23,16 +23,16 @@ describe('async actions', () => {
         { "first_name": "Test First Name",
         "last_name": "Test Last Name",
         "email": "testemail@email.com",
-        "id": 1}],appconf:{"SVCS_CONTEXT_URL": "http://x734:30024/"}}, headers: { 'content-type': 'application/json' } })
+        "id": 1}] }, headers: { 'content-type': 'application/json' } })
 
 
     const expectedActions =[{"emps": {emps: [
       { "first_name": "Test First Name",
       "last_name": "Test Last Name",
       "email": "testemail@email.com",
-      "id": 1}],appconf:{"SVCS_CONTEXT_URL": "http://x734:30024/"}}, "type": "LOAD_EMPLOYEES_SUCCESS"}]
+      "id": 1}]}, "type": "LOAD_EMPLOYEES_SUCCESS"}]
     
-    const store = mockStore({ emps: [], appconf:{"SVCS_CONTEXT_URL": "http://x734:30024/"}})
+    const store = mockStore({ emps: [] })
     
     return store.dispatch(actions.loadEmployees()).then(() => {
       // return of async actions
