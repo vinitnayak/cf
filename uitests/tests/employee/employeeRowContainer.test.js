@@ -10,8 +10,8 @@ import Adapter from 'enzyme-adapter-react-16';
 import enzyme,{shallow} from  'enzyme'; 
 import shallowWithStore from '../../utils/shallowWithStore.jsx'
 import {getAllEmployee} from '../../../src/app/employee/employeeAPI';
-import * as svcs from '../../../../garnishment/src/base/constants/ServiceUrls';
-import * as types from '../../../../garnishment/src/base/constants/ActionTypes';
+import * as svcs from '../../../../compliancefactory/src/base/constants/ServiceUrls';
+import * as types from '../../../../compliancefactory/src/base/constants/ActionTypes';
 import fetchMock from 'fetch-mock';
 
  const mockStore = configureMockStore();

@@ -3,7 +3,7 @@ import employeeReducer from '../../../src/app/employee/employeeReducer'
 
 describe('RootReducer test', () => {
     it('returns proper initial state', () => {
-      expect(rootReducer(undefined, {})).toEqual( {emps: [], form: {}, monthlychartdata: []});
+      expect(rootReducer(undefined, {})).toEqual( {appconf: {}, emps: [], form: {}, importdata: [], monthlychartdata: []});
     });
     it('returns updated state on create employee success', () => {
         const emp= {id:'2', first_name:'XYZ', last_name:'PQR', email:'xyz@pqr.com'}

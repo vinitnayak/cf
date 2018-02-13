@@ -26,6 +26,7 @@ import {getAppConf} from './base/config/confAction';
 let store = configureStore();
 
 getApiUrl().then(appconf => {
+    console.log(appconf);
     store.dispatch(getAppConf(appconf));
     store.dispatch(loadEmployees());
     store.dispatch(loadMonthlyChartData());

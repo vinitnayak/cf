@@ -3,9 +3,9 @@ import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 
 import {getAllEmployee} from '../../../src/app/employee/employeeAPI';
-import * as actions from '../../../../garnishment/src/app/employee/employeeAction';
-import * as types from '../../../../garnishment/src/base/constants/ActionTypes';
-import * as svcs from '../../../../garnishment/src/base/constants/ServiceUrls';
+import * as actions from '../../../../compliancefactory/src/app/employee/employeeAction';
+import * as types from '../../../../compliancefactory/src/base/constants/ActionTypes';
+import * as svcs from '../../../../compliancefactory/src/base/constants/ServiceUrls';
 
 const middlewares = [ thunk ]
 const mockStore = configureMockStore(middlewares)
@@ -23,16 +23,16 @@ describe('async actions', () => {
         { "first_name": "Test First Name",
         "last_name": "Test Last Name",
         "email": "testemail@email.com",
-        "id": 1}] }, headers: { 'content-type': 'application/json' } })
+        "id": 1}],appconf:{"SVCS_CONTEXT_URL": "http://x734:30024/"}}, headers: { 'content-type': 'application/json' } })
 
 
     const expectedActions =[{"emps": {emps: [
       { "first_name": "Test First Name",
       "last_name": "Test Last Name",
       "email": "testemail@email.com",
-      "id": 1}]}, "type": "LOAD_EMPLOYEES_SUCCESS"}]
+      "id": 1}],appconf:{"SVCS_CONTEXT_URL": "http://x734:30024/"}}, "type": "LOAD_EMPLOYEES_SUCCESS"}]
     
-    const store = mockStore({ emps: [] })
+    const store = mockStore({ emps: [], appconf:{"SVCS_CONTEXT_URL": "http://x734:30024/"}})
     
     return store.dispatch(actions.loadEmployees()).then(() => {
       // return of async actions

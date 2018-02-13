@@ -3,9 +3,9 @@ import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 
 import {getMonthlyChartData} from '../../../src/app/payments/paymentsAPI';
-import * as actions from '../../../../garnishment/src/app/payments/paymentsAction';
-import * as types from '../../../../garnishment/src/base/constants/ActionTypes';
-import * as svcs from '../../../../garnishment/src/base/constants/ServiceUrls';
+import * as actions from '../../../../compliancefactory/src/app/payments/paymentsAction';
+import * as types from '../../../../compliancefactory/src/base/constants/ActionTypes';
+import * as svcs from '../../../../compliancefactory/src/base/constants/ServiceUrls';
 
 const middlewares = [ thunk ]
 const mockStore = configureMockStore(middlewares)
