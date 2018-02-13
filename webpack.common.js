@@ -48,7 +48,14 @@ module.exports ={
         fs: '{}',
         tls: '{}',
         net: '{}',
-        console: '{}'
+        console: '{}',
+        react: 'React',
+        'react-dom':'ReactDOM',
+        redux:'Redux',
+        'react-redux':'ReactRedux',
+        'redux-form':'ReduxForm',
+        'redux-thunk':'ReduxThunk',
+        'prop-types':'PropTypes'
     },
     resolve: {
         extensions: ['jsx', '.js','.css']

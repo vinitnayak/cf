@@ -4,14 +4,6 @@ export function authenticateWS() {
   console.log('I am authenticateWS...111');
   var username = 'CFWSUSER';
   var password = 'bsi';
-  var options = {
-      url: 'https://ssdev01:10443/SampleWS/r/v1/EchoService/echo2',
-      auth: {
-          user: username,
-          password: password
-      },
-      method: "POST"
-  };
   let auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
   return fetch('https://ssdev01:10443/SampleWS/r/v1/EchoService/echo2', {
           method: 'POST',
@@ -29,9 +21,7 @@ export function authenticateWS() {
           console.log('Error', err)
       });
 };
-
-
-export function testRestfulCall() {
+/*export function testRestfulCall() {
             console.log('I am testRestfulCall...');
             var username = 'CFWSUSER';
             var password = 'bsi';
@@ -82,9 +72,9 @@ export function lastcc(){
       }
   }
 );
-}
+}*/
 export function loadEmployees() {
-  //authenticateWS();
+    //authenticateWS();
     return function(dispatch,getState) {
         const state = getState();
         return employeeApi.getAllEmployee(state.appconf.SVCS_CONTEXT_URL).then(emps => {
