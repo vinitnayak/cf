@@ -5,7 +5,7 @@ import rootReducer from './appReducer'
 
 
 
-const middleware = process.env.NODE_ENV === 'production' ? 
+const middleware =(process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'buildprod' ) ? 
 [ thunk ] : [ thunk,logger];
 
 const enhancersDevToolExt = compose(
