@@ -17,8 +17,8 @@ import ImportContainer from './app/import/ImportContainer.js';
 
 import TestCss from './app/sample/TestCss';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
-import PeriodicByCompanyGrid from './app/payrollintg/PeriodicByCompanyGrid.jsx';
-import PeriodicByAuthorityGrid from './app/payrollintg/PeriodicByAuthorityGrid.jsx';
+import PeriodicByCompanyGrid from './app/sample/PeriodicByCompanyGrid.jsx';
+import PeriodicByAuthorityGrid from './app/sample/PeriodicByAuthorityGrid.jsx';
 
 import {getApiUrl} from './base/config/confAPI';
 import {getAppConf} from './base/config/confAction';
