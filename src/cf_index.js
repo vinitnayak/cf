@@ -1,18 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
 import configureStore from './base/config/configureStore';
+
 import GrdReportComponent from './app/employee/GrdReportComponent.jsx';
 import EmployeeFormContainer from './app/employee/EmployeeFormContainer';
-import {loadEmployees} from './app/employee/employeeAction';
-import {loadMonthlyChartData} from './app/payments/paymentsAction';
+
 import MonthlyPaymentChartContainer from './app/payments/MonthlyPaymentChartContainer';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 import PeriodicCompanyTotal from './app/payrollintg/PeriodicCompanyTotal';
 import PeriodicAuthTaxTypeTotal from './app/payrollintg/PeriodicAuthTaxTypeTotal';
+
 import {getApiUrl} from './base/config/confAPI';
 import {getAppConf} from './base/config/confAction';
+import {loadEmployees} from './app/employee/employeeAction';
+import {loadMonthlyChartData} from './app/payments/paymentsAction';
+
 import * as rname from './base/constants/RenderNames';
+
 let store = configureStore();
 
 getApiUrl().then(appconf => {
@@ -87,28 +93,6 @@ function renderFilterPayrollData(elem) {
         document.getElementById(elem));
 }
 /**
- * renderPeriodicByCompany
- * @param {*} elem 
- */
-function renderPeriodicByCompany(elem) {
-    ReactDOM.render(
-        <Provider store={store}>
-        <PeriodicByCompanyGrid/>
-        </Provider>,
-        document.getElementById(elem));
-}
-/**
- * renderPeriodicByAuthority
- * @param {*} elem 
- */
-function renderPeriodicByAuthority(elem) {
-    ReactDOM.render(
-        <Provider store={store}>
-        <PeriodicByAuthorityGrid/>
-        </Provider>,
-        document.getElementById(elem));
-}
-/**
  * renderMonthlyPaymentsChart
  * @param {*} elem 
  */
@@ -140,15 +124,6 @@ function renderAddEmployeeForm(elem) {
         </Provider>,
         document.getElementById(elem));
 }
-/**
- * renderImportUI
- * @param {*} elem 
- */
-function renderImportUI(elem) {
-    ReactDOM.render(<Provider store={store}>
-        <ImportContainer/>
-        </Provider>,
-        document.getElementById(elem));
-}
+
 module.exports = renderApplication;
 window.renderApplication = renderApplication;
