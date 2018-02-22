@@ -50,16 +50,24 @@ class CompanyTotalGrid extends React.Component {
             let clickedButton = event.args.button;
             if(clickedButton[0].id==='processPostct'){
                 let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
-                selIndexes.forEach(index => {
-                    let data = this.refs.companyTotalGrid.getrowdata(index);
-                    alert('Selcted for Post : '+ Object.values(data));
-                });
+                if(selIndexes.length >0){
+                    selIndexes.forEach(index => {
+                        let data = this.refs.companyTotalGrid.getrowdata(index);
+                        alert('Selcted for Post : '+ Object.values(data));
+                    });
+                }else{
+                    alert('Selcted at least one payroll record.');
+                }
             }else if(clickedButton[0].id==='processDeletect'){
                 let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
-                selIndexes.forEach(index => {
-                    let data = this.refs.companyTotalGrid.getrowdata(index);
-                    alert('Selcted for Delete : '+ Object.values(data));
-                });
+                if(selIndexes.length >0){
+                    selIndexes.forEach(index => {
+                        let data = this.refs.companyTotalGrid.getrowdata(index);
+                        alert('Selcted for Delete : '+ Object.values(data));
+                    });
+                }else{
+                    alert('Selcted at least one payroll record.');
+                }
             }
         });
         this.refs.excelExportct.on('click', () => {

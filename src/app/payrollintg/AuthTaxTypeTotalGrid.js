@@ -54,28 +54,44 @@ class AuthTaxTypeTotalGrid extends React.Component {
             let clickedButton = event.args.button;
             if(clickedButton[0].id==='processPost'){
                 let selIndexes = this.refs.authTaxTypeTotalGrid.getselectedrowindexes();
-                selIndexes.forEach(index => {
-                    let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
-                    alert('Selcted for Post : '+ Object.values(data));
-                });
+                if(selIndexes.length >0){
+                    selIndexes.forEach(index => {
+                        let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
+                        alert('Selcted for Post : '+ Object.values(data));
+                    });
+                }else{
+                    alert('Selcted at least one payroll record.');
+                }
             }else if(clickedButton[0].id==='processDelete'){
                 let selIndexes = this.refs.authTaxTypeTotalGrid.getselectedrowindexes();
-                selIndexes.forEach(index => {
-                    let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
-                    alert('Selcted for Delete : '+ Object.values(data));
-                });
+                if(selIndexes.length >0){
+                    selIndexes.forEach(index => {
+                        let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
+                        alert('Selcted for Delete : '+ Object.values(data));
+                    });
+                }else{
+                    alert('Selcted at least one payroll record.');
+                }
             }else if(clickedButton[0].id==='processReceived'){
                 let selIndexes = this.refs.authTaxTypeTotalGrid.getselectedrowindexes();
-                selIndexes.forEach(index => {
-                    let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
-                    alert('Selcted for Mark as Received : '+ Object.values(data));
-                });
+                if(selIndexes.length >0){
+                    selIndexes.forEach(index => {
+                        let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
+                        alert('Selcted for Mark as Received : '+ Object.values(data));
+                    });
+                }else{
+                    alert('Selcted at least one payroll record.');
+                }
             }else if(clickedButton[0].id==='processMigrated'){
                 let selIndexes = this.refs.authTaxTypeTotalGrid.getselectedrowindexes();
-                selIndexes.forEach(index => {
-                    let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
-                    alert('Selcted for Mark as Migrated : '+ Object.values(data));
-                });
+                if(selIndexes.length >0){
+                    selIndexes.forEach(index => {
+                        let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
+                        alert('Selcted for Mark as Migrated : '+ Object.values(data));
+                    });
+                }else{
+                    alert('Selcted at least one payroll record.');
+                }
             }else if(clickedButton[0].id==='addPeriodicPayrollRec'){
                 alert('Selcted : '+ clickedButton[0].id+' button');
             }
