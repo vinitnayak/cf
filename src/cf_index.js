@@ -2,18 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './base/config/configureStore';
-
 import GrdReportComponent from './app/employee/GrdReportComponent.jsx';
 import EmployeeFormContainer from './app/employee/EmployeeFormContainer';
-import EmployeeListContainer from './app/employee/EmployeeListContainer.jsx';
-
 import {loadEmployees} from './app/employee/employeeAction';
 import {loadMonthlyChartData} from './app/payments/paymentsAction';
-
 import MonthlyPaymentChartContainer from './app/payments/MonthlyPaymentChartContainer';
-
-import {loadImportData} from './app/import/importAction';
-import ImportContainer from './app/import/ImportContainer.js';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 import PeriodicCompanyTotal from './app/payrollintg/PeriodicCompanyTotal';
 import PeriodicAuthTaxTypeTotal from './app/payrollintg/PeriodicAuthTaxTypeTotal';
@@ -27,7 +20,6 @@ getApiUrl().then(appconf => {
     store.dispatch(getAppConf(appconf));
     store.dispatch(loadEmployees());
     store.dispatch(loadMonthlyChartData());
-    store.dispatch(loadImportData());
 }).catch(error => {
     throw (error);
 });
@@ -95,17 +87,6 @@ function renderFilterPayrollData(elem) {
         document.getElementById(elem));
 }
 /**
- * renderMpd
- * @param {*} elem 
- */
-function renderMpd(elem) {
-    ReactDOM.render(
-        <Provider store={store}>
-        <Mpd/>
-        </Provider>,
-        document.getElementById(elem));
-}
-/**
  * renderPeriodicByCompany
  * @param {*} elem 
  */
@@ -156,16 +137,6 @@ function renderAddEmployeeForm(elem) {
     ReactDOM.render(
         <Provider store={store}>
         <EmployeeFormContainer/>
-        </Provider>,
-        document.getElementById(elem));
-}
-/**
- * renderEmployeeList
- * @param {*} elem 
- */
-function renderEmployeeList(elem) {
-    ReactDOM.render(<Provider store={store}>
-        <EmployeeListContainer/>
         </Provider>,
         document.getElementById(elem));
 }

@@ -1,8 +1,7 @@
 export default {
+  appconf:{},
   emps: [],
   monthlychartdata:[],
-  importdata:[],
-  appconf:{},
   periodicdata:{
     filtertype:'',
     filterby:'',

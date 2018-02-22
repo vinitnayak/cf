@@ -209,7 +209,7 @@ class FilterPayrollData extends Component {
         return (
             <div>
                 <Modal size="lg" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
-                    <ModalHeader toggle={this.toggle}>Filter Payroll Data</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Filter Maintain Payroll Data</ModalHeader>
                     <ModalBody>
                         <Form>
                             <FormGroup row>
