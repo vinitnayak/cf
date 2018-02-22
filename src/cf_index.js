@@ -14,11 +14,7 @@ import MonthlyPaymentChartContainer from './app/payments/MonthlyPaymentChartCont
 
 import {loadImportData} from './app/import/importAction';
 import ImportContainer from './app/import/ImportContainer.js';
-import App from './app/sample/App';
-import TestCss from './app/sample/TestCss';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
-import PeriodicByCompanyGrid from './app/sample/PeriodicByCompanyGrid.jsx';
-import PeriodicByAuthorityGrid from './app/sample/PeriodicByAuthorityGrid.jsx';
 import PeriodicCompanyTotal from './app/payrollintg/PeriodicCompanyTotal';
 import PeriodicAuthTaxTypeTotal from './app/payrollintg/PeriodicAuthTaxTypeTotal';
 import {getApiUrl} from './base/config/confAPI';
@@ -53,8 +49,6 @@ function renderApplication(elem,renderName){
         renderMonthlyPaymentsChart(elem);
     }else if(renderName===rname.RN_IMPORT_UPLOAD){
         renderImportUI(elem);
-    }else if(renderName===rname.RN_TEST_CSS){
-        renderTestCss(elem);
     }else if(renderName===rname.RN_PERIODIC_COMP){
         renderPeriodicByCompany(elem);
     }else if(renderName===rname.RN_PERIODIC_AUTH){
@@ -182,12 +176,6 @@ function renderEmployeeList(elem) {
 function renderImportUI(elem) {
     ReactDOM.render(<Provider store={store}>
         <ImportContainer/>
-        </Provider>,
-        document.getElementById(elem));
-}
-function renderTestCss(elem) {
-    ReactDOM.render(<Provider store={store}>
-        <App/>
         </Provider>,
         document.getElementById(elem));
 }
