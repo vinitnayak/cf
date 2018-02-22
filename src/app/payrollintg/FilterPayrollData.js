@@ -36,6 +36,9 @@ class FilterPayrollData extends Component {
         this.setState({
             modal: !this.state.modal
         });
+       if(this.state.modal){
+            renderWelcomePage(APP_ANCHOR);
+       }
     }
     changeBackdrop(e) {
         let value = e.target.value;
