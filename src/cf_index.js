@@ -14,15 +14,16 @@ import MonthlyPaymentChartContainer from './app/payments/MonthlyPaymentChartCont
 
 import {loadImportData} from './app/import/importAction';
 import ImportContainer from './app/import/ImportContainer.js';
-
+import App from './app/sample/App';
 import TestCss from './app/sample/TestCss';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 import PeriodicByCompanyGrid from './app/sample/PeriodicByCompanyGrid.jsx';
 import PeriodicByAuthorityGrid from './app/sample/PeriodicByAuthorityGrid.jsx';
-
+import PeriodicCompanyTotal from './app/payrollintg/PeriodicCompanyTotal';
+import PeriodicAuthTaxTypeTotal from './app/payrollintg/PeriodicAuthTaxTypeTotal';
 import {getApiUrl} from './base/config/confAPI';
 import {getAppConf} from './base/config/confAction';
-
+import * as rname from './base/constants/RenderNames';
 let store = configureStore();
 
 getApiUrl().then(appconf => {
@@ -38,31 +39,55 @@ getApiUrl().then(appconf => {
  * renderApplication 
  * master branch
  * @param {*} elem 
- * @param {*} path 
+ * @param {*} renderName 
  */
-function renderApplication(elem,path){
+function renderApplication(elem,renderName){
      store.dispatch(loadEmployees());
-    if(path==='employeelist'){
+    if(renderName===rname.RN_EMPLOYEE_LIST){
         renderEmployeeList(elem);
-    }else if(path==='addemployee'){
+    }else if(renderName===rname.RN_ADD_EMPLOYEE){
         renderAddEmployeeForm(elem);
-    }else if(path==='employeegrid'){
+    }else if(renderName===rname.RN_EMPLOYEE_GRID){
         renderEmployeeGrid(elem);
-    }else if(path==='main'){
-        renderApplicationMain(elem);
-    }else if(path==='monthlypaymentschart'){
+    }else if(renderName===rname.RN_MONTHLY_CHART){
         renderMonthlyPaymentsChart(elem);
-    }else if(path==='importupload'){
+    }else if(renderName===rname.RN_IMPORT_UPLOAD){
         renderImportUI(elem);
-    }else if(path==='testcss'){
+    }else if(renderName===rname.RN_TEST_CSS){
         renderTestCss(elem);
-    }else if(path==='periodiccomp'){
+    }else if(renderName===rname.RN_PERIODIC_COMP){
         renderPeriodicByCompany(elem);
-    }else if(path==='periodicauth'){
+    }else if(renderName===rname.RN_PERIODIC_AUTH){
         renderPeriodicByAuthority(elem);
-    }else if(path==='filterpayrolldata'){
+    }else if(renderName===rname.RN_FILTER_PAYROLL_DATA){
         renderFilterPayrollData(elem);
+    }else if(renderName===rname.RN_PERIODIC_COMPNAY_TOTAL){
+        renderPeriodicCompanyTotal(elem)
+    }else if(renderName===rname.RN_AUTH_TAXTYPE_TOTAL){
+        renderPeriodicAuthTaxTypeTotal(elem)
     }
+}
+/**
+ * renderPeriodicAuthTaxTypeTotal
+ * @param {*} elem 
+ */
+function renderPeriodicAuthTaxTypeTotal(elem){
+    ReactDOM.render(
+        <Provider store={store}>
+        <PeriodicAuthTaxTypeTotal/>
+        </Provider>,
+        document.getElementById(elem));
+}
+/**
+ * renderPeriodicCompanyTotal
+ * @param {*} elem 
+ */
+function renderPeriodicCompanyTotal(elem){
+    ReactDOM.render(
+        <Provider store={store}>
+        <PeriodicCompanyTotal/>
+        </Provider>,
+        document.getElementById(elem));
 }
 /**
  * renderFilterPayrollData
@@ -161,7 +186,9 @@ function renderImportUI(elem) {
         document.getElementById(elem));
 }
 function renderTestCss(elem) {
-    ReactDOM.render(<TestCss/>,
+    ReactDOM.render(<Provider store={store}>
+        <App/>
+        </Provider>,
         document.getElementById(elem));
 }
 module.exports = renderApplication;
