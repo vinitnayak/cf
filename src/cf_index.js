@@ -6,9 +6,9 @@ import configureStore from './base/config/configureStore';
 
 import GrdReportComponent from './app/employee/GrdReportComponent.jsx';
 import EmployeeFormContainer from './app/employee/EmployeeFormContainer';
-
 import MonthlyPaymentChartContainer from './app/payments/MonthlyPaymentChartContainer';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
+
 import PeriodicCompanyTotal from './app/payrollintg/PeriodicCompanyTotal';
 import PeriodicAuthTaxTypeTotal from './app/payrollintg/PeriodicAuthTaxTypeTotal';
 
@@ -36,21 +36,12 @@ getApiUrl().then(appconf => {
  * @param {*} renderName 
  */
 function renderApplication(elem,renderName){
-     store.dispatch(loadEmployees());
-    if(renderName===rname.RN_EMPLOYEE_LIST){
-        renderEmployeeList(elem);
-    }else if(renderName===rname.RN_ADD_EMPLOYEE){
+    if(renderName===rname.RN_ADD_EMPLOYEE){
         renderAddEmployeeForm(elem);
     }else if(renderName===rname.RN_EMPLOYEE_GRID){
         renderEmployeeGrid(elem);
     }else if(renderName===rname.RN_MONTHLY_CHART){
         renderMonthlyPaymentsChart(elem);
-    }else if(renderName===rname.RN_IMPORT_UPLOAD){
-        renderImportUI(elem);
-    }else if(renderName===rname.RN_PERIODIC_COMP){
-        renderPeriodicByCompany(elem);
-    }else if(renderName===rname.RN_PERIODIC_AUTH){
-        renderPeriodicByAuthority(elem);
     }else if(renderName===rname.RN_FILTER_PAYROLL_DATA){
         renderFilterPayrollData(elem);
     }else if(renderName===rname.RN_PERIODIC_COMPNAY_TOTAL){
