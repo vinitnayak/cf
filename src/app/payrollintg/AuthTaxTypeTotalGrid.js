@@ -60,7 +60,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                         alert('Selcted for Post : '+ Object.values(data));
                     });
                 }else{
-                    alert('Selcted at least one payroll record.');
+                    alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='processDelete'){
                 let selIndexes = this.refs.authTaxTypeTotalGrid.getselectedrowindexes();
@@ -70,7 +70,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                         alert('Selcted for Delete : '+ Object.values(data));
                     });
                 }else{
-                    alert('Selcted at least one payroll record.');
+                    alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='processReceived'){
                 let selIndexes = this.refs.authTaxTypeTotalGrid.getselectedrowindexes();
@@ -80,7 +80,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                         alert('Selcted for Mark as Received : '+ Object.values(data));
                     });
                 }else{
-                    alert('Selcted at least one payroll record.');
+                    alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='processMigrated'){
                 let selIndexes = this.refs.authTaxTypeTotalGrid.getselectedrowindexes();
@@ -90,7 +90,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                         alert('Selcted for Mark as Migrated : '+ Object.values(data));
                     });
                 }else{
-                    alert('Selcted at least one payroll record.');
+                    alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='addPeriodicPayrollRec'){
                 alert('Selcted : '+ clickedButton[0].id+' button');

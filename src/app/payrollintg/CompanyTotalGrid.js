@@ -56,7 +56,7 @@ class CompanyTotalGrid extends React.Component {
                         alert('Selcted for Post : '+ Object.values(data));
                     });
                 }else{
-                    alert('Selcted at least one payroll record.');
+                    alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='processDeletect'){
                 let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
@@ -66,7 +66,7 @@ class CompanyTotalGrid extends React.Component {
                         alert('Selcted for Delete : '+ Object.values(data));
                     });
                 }else{
-                    alert('Selcted at least one payroll record.');
+                    alert('Please select at least one payroll record.');
                 }
             }
         });
