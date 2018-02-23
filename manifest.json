@@ -23,7 +23,7 @@
         "title": "Employee List Grid",
         "icon":"far fa-calendar-alt",
         "tooltip": "Employee List Grid",
-        "rendername": "employeegrid",
+        "renderName": "employeegrid",
         "visible": true
     },
     {
@@ -33,7 +33,7 @@
         "title": "Maintain Payroll Data",
         "icon":"fas fa-filter fa-sm",
         "tooltip": "Maintain Payroll Data",
-        "rendername": "filterpayrolldata",
+        "renderName": "filterpayrolldata",
         "visible": true
     }],
     "widgets": [{
