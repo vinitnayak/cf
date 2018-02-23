@@ -43,12 +43,12 @@
         "title": "Monthly Payments Chart",
         "icon":"far fa-chart-bar",
         "tooltip": "Monthly Payments to User",
-        "rendername": "monthlypaymentschart",
+        "renderName": "monthlypaymentschart",
         "visible": true
     }],
     "search": [{
         "id":"8536fa8e-a2c9-42d0-af52-bbb25a12d911",
-        "rendername": "searchAppModule",
+        "renderName": "searchAppModule",
         "entities":[{"case":{"abbr":"c", "fields":["caseId","name","authority"]}}]
     }]
 }
