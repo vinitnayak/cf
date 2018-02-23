@@ -57,7 +57,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                 if(selIndexes.length >0){
                     selIndexes.forEach(index => {
                         let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
-                        alert('Selcted for Post : '+ Object.values(data));
+                        alert('Selected for Post : '+ Object.values(data));
                     });
                 }else{
                     alert('Please select at least one payroll record.');
@@ -67,7 +67,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                 if(selIndexes.length >0){
                     selIndexes.forEach(index => {
                         let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
-                        alert('Selcted for Delete : '+ Object.values(data));
+                        alert('Selected for Delete : '+ Object.values(data));
                     });
                 }else{
                     alert('Please select at least one payroll record.');
@@ -77,7 +77,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                 if(selIndexes.length >0){
                     selIndexes.forEach(index => {
                         let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
-                        alert('Selcted for Mark as Received : '+ Object.values(data));
+                        alert('Selected for Mark as Received : '+ Object.values(data));
                     });
                 }else{
                     alert('Please select at least one payroll record.');
@@ -87,13 +87,13 @@ class AuthTaxTypeTotalGrid extends React.Component {
                 if(selIndexes.length >0){
                     selIndexes.forEach(index => {
                         let data = this.refs.authTaxTypeTotalGrid.getrowdata(index);
-                        alert('Selcted for Mark as Migrated : '+ Object.values(data));
+                        alert('Selected for Mark as Migrated : '+ Object.values(data));
                     });
                 }else{
                     alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='addPeriodicPayrollRec'){
-                alert('Selcted : '+ clickedButton[0].id+' button');
+                alert('Selected : '+ clickedButton[0].id+' button');
             }
         });
         this.refs.excelExport.on('click', () => {
@@ -138,14 +138,14 @@ class AuthTaxTypeTotalGrid extends React.Component {
                 </Alert>
                 <div>
                     <div style={{ float: 'left', marginBottom: 20 }}>
-                        <JqxButton ref='selectAllBtn' width={140} height={40} value="<span style='font-size:1rem;font-weight:400;'>Select All</span>" template={'success'}/>
+                        <JqxButton id="selectAllBtnId" ref='selectAllBtn' width={140} height={40} value="<span style='font-size:1rem;font-weight:400;'>Select All</span>" template={'success'}/>
                     </div>
                     <div style={{ float: 'left', marginLeft: 10 }}>
-                        <JqxButton ref='resetBtn' width={140} height={40} value="<span style='font-size:1rem;font-weight:400;'>Reset</span>" template={'success'}/>
+                        <JqxButton  id="resetBtnId" ref='resetBtn' width={140} height={40} value="<span style='font-size:1rem;font-weight:400;'>Reset</span>" template={'success'}/>
                     </div>
                 </div>
                 <div style={{ marginBottom: 20 }}>
-                    <JqxButtonGroup ref='myButtonGroup' mode={'radio'} template={'success'} className="float-right">
+                    <JqxButtonGroup id="myButtonGroupId" ref='myButtonGroup' mode={'radio'} template={'success'} className="float-right">
                         <button id='processPost' style={buttonStyle} value="<span style='font-size:1rem;font-weight:400;'> Process Post</span>" />
                         <button id='processDelete' style={buttonStyle} value="<span style='font-size:1rem;font-weight:400;'> Process Delete</span>" />
                         <button id='processReceived' style={buttonStyle} value="<span style='font-size:1rem;font-weight:400;'>Mark as Received</span>" />
@@ -160,10 +160,10 @@ class AuthTaxTypeTotalGrid extends React.Component {
                     columnsresize={true} selectionmode={'multiplerowsextended'}/>
                 <div style={{ marginTop: 20 }}>
                     <div style={{ float: 'left' }}>
-                        <JqxButton  ref='excelExport' width={145} height={40} value="<i class='fas fa-file-excel fa-sm'></i><span style='font-size:1rem;font-weight:400;'> Export to Excel</span>" template={'success'}/>
+                        <JqxButton id="excelExportId" ref='excelExport' width={145} height={40} value="<i class='fas fa-file-excel fa-sm'></i><span style='font-size:1rem;font-weight:400;'> Export to Excel</span>" template={'success'}/>
                     </div>
                     <div style={{ float: 'left', marginLeft: 10 }}>
-                        <JqxButton  ref='csvExport' width={145} height={40} value="<i class='fas fa-file-code fa-sm'></i><span style='font-size:1rem;font-weight:400;'> Export to CSV<span>" template={'success'}/>
+                        <JqxButton id="csvExportId" ref='csvExport' width={145} height={40} value="<i class='fas fa-file-code fa-sm'></i><span style='font-size:1rem;font-weight:400;'> Export to CSV<span>" template={'success'}/>
                     </div>
                 </div>
             </div>

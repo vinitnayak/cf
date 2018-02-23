@@ -53,7 +53,7 @@ class CompanyTotalGrid extends React.Component {
                 if(selIndexes.length >0){
                     selIndexes.forEach(index => {
                         let data = this.refs.companyTotalGrid.getrowdata(index);
-                        alert('Selcted for Post : '+ Object.values(data));
+                        alert('Selected for Post : '+ Object.values(data));
                     });
                 }else{
                     alert('Please select at least one payroll record.');
@@ -63,7 +63,7 @@ class CompanyTotalGrid extends React.Component {
                 if(selIndexes.length >0){
                     selIndexes.forEach(index => {
                         let data = this.refs.companyTotalGrid.getrowdata(index);
-                        alert('Selcted for Delete : '+ Object.values(data));
+                        alert('Selected for Delete : '+ Object.values(data));
                     });
                 }else{
                     alert('Please select at least one payroll record.');
