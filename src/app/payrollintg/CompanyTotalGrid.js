@@ -4,7 +4,6 @@ import { Alert } from 'reactstrap';
 import JqxGrid from '../../deps/jqwidgets-react/react_jqxgrid.js';
 import JqxButton from '../../deps/jqwidgets-react/react_jqxbuttons.js';
 import JqxButtonGroup from '../../deps/jqwidgets-react/react_jqxbuttongroup.js';
-import { APP_ANCHOR } from '../../base/constants/AppConstants';
 import { RN_FILTER_PAYROLL_DATA } from '../../base/constants/RenderNames';
 
 class CompanyTotalGrid extends React.Component {
@@ -34,7 +33,7 @@ class CompanyTotalGrid extends React.Component {
         };
     }
     goToFilterPage() {
-        renderApplication(APP_ANCHOR, RN_FILTER_PAYROLL_DATA);
+        renderApplication(appAnchor(), RN_FILTER_PAYROLL_DATA);
     }
     componentDidMount() {
         this.refs.resetBtnct.on('click', (event) => {

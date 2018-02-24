@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, ButtonGroup, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Col, Form,Input } from 'reactstrap';
 import JqxDateTimeInput from '../../deps/jqwidgets-react/react_jqxdatetimeinput.js';
-import {APP_ANCHOR} from '../../base/constants/AppConstants';
 import {RN_PERIODIC_COMPNAY_TOTAL,RN_AUTH_TAXTYPE_TOTAL} from '../../base/constants/RenderNames';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -37,7 +36,7 @@ class FilterPayrollData extends Component {
             modal: !this.state.modal
         });
        if(this.state.modal){
-            renderWelcomePage(APP_ANCHOR);
+            renderWelcomePage(appAnchor());
        }
     }
     changeBackdrop(e) {
@@ -118,14 +117,13 @@ class FilterPayrollData extends Component {
         var periodicdata = this.getRequestData(1);
         periodicdata.companytotaldata=[];
         this.props.loadPeriodicCompanyTotal(periodicdata);
-        renderApplication(APP_ANCHOR,RN_PERIODIC_COMPNAY_TOTAL);
+        renderApplication(appAnchor(),RN_PERIODIC_COMPNAY_TOTAL);
     }
     onAuthTaxTypeTotal(){
         var periodicdata = this.getRequestData(2);
         periodicdata.authtaxtypetotaldata=[];
-        console.log(periodicdata);
         this.props.loadPeriodicAuthTaxTypeTotal(periodicdata);
-        renderApplication(APP_ANCHOR,RN_AUTH_TAXTYPE_TOTAL);
+        renderApplication(appAnchor(),RN_AUTH_TAXTYPE_TOTAL);
     }
     render() {
         var periodicdata={};

@@ -4,9 +4,8 @@ import { Alert } from 'reactstrap';
 import JqxGrid from '../../deps/jqwidgets-react/react_jqxgrid.js';
 import JqxButton from '../../deps/jqwidgets-react/react_jqxbuttons.js';
 import JqxButtonGroup from '../../deps/jqwidgets-react/react_jqxbuttongroup.js';
-import { APP_ANCHOR } from '../../base/constants/AppConstants';
 import { RN_FILTER_PAYROLL_DATA } from '../../base/constants/RenderNames';
-
+import PeriodicPayrollRecordForm from './PeriodicPayrollRecordForm';
 class AuthTaxTypeTotalGrid extends React.Component {
     constructor(props) {
         super(props);
@@ -39,7 +38,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
         };
     }
     goToFilterPage() {
-        renderApplication(APP_ANCHOR, RN_FILTER_PAYROLL_DATA);
+        renderApplication(appAnchor(), RN_FILTER_PAYROLL_DATA);
     }
     componentDidMount() {
         this.refs.resetBtn.on('click', (event) => {
@@ -93,7 +92,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                     alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='addPeriodicPayrollRec'){
-                alert('Selected : '+ clickedButton[0].id+' button');
+                this.refs.addRecordForm.toggleAddPayrollRecordModal();
             }
         });
         this.refs.excelExport.on('click', () => {
@@ -153,6 +152,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                         <button id='addPeriodicPayrollRec' style={buttonStyle} value="<span style='font-size:1rem;font-weight:400;'>Add Payroll Record</span>" />
                     </JqxButtonGroup>
                 </div>
+                <PeriodicPayrollRecordForm ref='addRecordForm'/>
                 <JqxGrid ref='authTaxTypeTotalGrid'
                     width={'100%'} source={dataAdapter} pageable={true}
                     sortable={false} altrows={true} enabletooltips={false}

@@ -36,6 +36,7 @@ getApiUrl().then(appconf => {
  * @param {*} renderName 
  */
 function renderApplication(elem,renderName){
+    setAppAnchor(elem);
     if(renderName===rname.RN_ADD_EMPLOYEE){
         renderAddEmployeeForm(elem);
     }else if(renderName===rname.RN_EMPLOYEE_GRID){
@@ -94,6 +95,13 @@ function renderMonthlyPaymentsChart(elem) {
         </Provider>,
         document.getElementById(elem));
 }
+var APP_ANCHOR;
+function setAppAnchor(elem){
+   APP_ANCHOR = elem;
+}
+function appAnchor(){
+   return APP_ANCHOR;
+ }
 /**
  * renderEmployeeGrid
  * @param {*} elem 
@@ -118,3 +126,5 @@ function renderAddEmployeeForm(elem) {
 
 module.exports = renderApplication;
 window.renderApplication = renderApplication;
+module.exports=appAnchor;
+window.appAnchor=appAnchor;
