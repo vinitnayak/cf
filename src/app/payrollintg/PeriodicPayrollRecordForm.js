@@ -36,7 +36,7 @@ class PeriodicPayrollRecordForm extends Component {
 	constructor(props) {
         super(props);
         this.state = {
-            showAddPayrollRecordModal: true,
+            showAddPayrollRecordModal: false,
         };
         this.toggleAddPayrollRecordModal = this.toggleAddPayrollRecordModal.bind(this);
     }
