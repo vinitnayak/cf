@@ -154,8 +154,6 @@
       <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
       <ul class="navbar-primary-menu">
         <li>
-          <a href="#" onclick="return loadspa('spa4')"><span class="nav-label"><i class="fas fa-user"></i> Add Employee</span></a>
-          <a href="#" onclick="return loadspa('spa2')"><span class="nav-label"><i class="far fa-calendar-alt"></i> Employee Grid</span></a>
           <a href="#" onclick="return loadspa('spa3')"><span class="nav-label"><i class="far fa-chart-bar"></i> Monthly Payments Chart</span></a>
           <a href="#" onclick="return loadspa('spa10')"><span class="nav-label"><i class="fas fa-filter fa-sm"></i> Maintain Payroll Data</span></a>
         </li>
@@ -173,12 +171,8 @@
     <script type="text/javascript">
       function loadspa(spa) {
           unMountNMountContainerNode();
-          if(spa=='spa2'){
-            renderApplication('_compliancefactory_id','employeegrid');
-          }else if(spa=='spa3'){
+          if(spa=='spa3'){
             renderApplication('_compliancefactory_id','monthlypaymentschart');
-          }else if(spa=='spa4'){
-            renderApplication('_compliancefactory_id','addemployee');
           }else if(spa=='spa10'){
             renderApplication('_compliancefactory_id','filterpayrolldata');
           }else{

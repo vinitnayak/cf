@@ -4,8 +4,6 @@ import { Provider } from 'react-redux';
 
 import configureStore from './base/config/configureStore';
 
-import GrdReportComponent from './app/employee/GrdReportComponent.jsx';
-import EmployeeFormContainer from './app/employee/EmployeeFormContainer';
 import MonthlyPaymentChartContainer from './app/payments/MonthlyPaymentChartContainer';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 
@@ -14,7 +12,7 @@ import PeriodicAuthTaxTypeTotal from './app/payrollintg/PeriodicAuthTaxTypeTotal
 
 import {getApiUrl} from './base/config/confAPI';
 import {getAppConf} from './base/config/confAction';
-import {loadEmployees} from './app/employee/employeeAction';
+
 import {loadMonthlyChartData} from './app/payments/paymentsAction';
 
 import * as rname from './base/constants/RenderNames';
@@ -24,7 +22,6 @@ let store = configureStore();
 getApiUrl().then(appconf => {
     console.log(appconf);
     store.dispatch(getAppConf(appconf));
-    store.dispatch(loadEmployees());
     store.dispatch(loadMonthlyChartData());
 }).catch(error => {
     throw (error);

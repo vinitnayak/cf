@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ContactFormComponent from './EmployeeFormComponent'
+import PeriodicPayrollRecordForm from './PeriodicPayrollRecordForm'
 import { reduxForm } from 'redux-form'
-import * as formValidations from './formValidations'
-import  { saveEmployee }  from './employeeAction';
+import * as formValidations from '../employee/formValidations'
+import  { saveEmployee }  from '../employee/employeeAction';
 
 export const formName = 'entry-form';
 
-let ContactFormContainer = reduxForm({
+let PeriodicPayrollRecordFormContainer = reduxForm({
 	form: formName,
 	onSubmitSuccess: afterSubmit,
 	validate: formValidations.createValidator({
@@ -15,7 +15,7 @@ let ContactFormContainer = reduxForm({
 		last_name: formValidations.required,
 		email: formValidations.required
 	})
-})(ContactFormComponent)
+})(PeriodicPayrollRecordForm)
 
 const afterSubmit = (result, dispatch) => dispatch(reset(formName));
 const mapStateToProps = null;
@@ -48,6 +48,6 @@ onSave: contactFormValues => {
 //const mergeProps = (stateProps, dispatchProps, ownProps) =>
 //	Object.assign({}, stateProps, dispatchProps, ownProps)
 
-ContactFormContainer = connect(mapStateToProps, mapDispatchToProps)(ContactFormContainer)
+PeriodicPayrollRecordFormContainer = connect(mapStateToProps, mapDispatchToProps)(PeriodicPayrollRecordFormContainer)
 
-export default ContactFormContainer
+export default PeriodicPayrollRecordFormContainer

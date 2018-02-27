@@ -1,6 +1,5 @@
 export default {
   appconf:{},
-  emps: [],
   monthlychartdata:[],
   periodicdata:{
     filtertype:'',

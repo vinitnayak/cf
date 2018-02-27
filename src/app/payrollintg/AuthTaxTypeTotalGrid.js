@@ -92,7 +92,9 @@ class AuthTaxTypeTotalGrid extends React.Component {
                     alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='addPeriodicPayrollRec'){
-                this.refs.addRecordForm.toggleAddPayrollRecordModal();
+                console.log(this.refs.addRecordForm);
+                console.log(this.refs.addRecordForm.getWrappedInstance());
+                this.refs.addRecordForm.getWrappedInstance().mySubmit();
             }
         });
         this.refs.excelExport.on('click', () => {
