@@ -9,7 +9,7 @@ export const renderField = field => {
 	const { type, label, input, meta: { touched, error, warning } } = field
 	return (
 		<div className="form-group row">
-			<label className="col-sm-3 col-form-label">{label}</label>
+			<label className="col-sm-3 col-form-label"><strong>{label}</strong></label>
 			<div className="col-sm-9">
 			<input {...input} type={type} className="form-control" />
 			{touched &&
@@ -27,7 +27,7 @@ const rescodes  = [ 'Resident', 'Nonresident','Default Resident','Live and Work'
 const nonrecvals=['No','Yes'];
 const renderSelectField = ({ input, label, type,placeholder, meta: { touched, error }, children }) => (
 	<div class="form-group row">
-	  <label className="col-sm-3 col-form-label">{label}</label>
+	  <label className="col-sm-3 col-form-label"><strong>{label}</strong></label>
 	  <div className="col-sm-9">
 		<select {...input} class="form-control">
 		  <option value="-1">{placeholder}</option>

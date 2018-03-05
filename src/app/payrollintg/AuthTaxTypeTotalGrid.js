@@ -37,6 +37,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
             };
         this.state = {
             source: source,
+            backdrop: 'static',
             showAddPayrollRecordModal: false,
         };
         this.toggleAddPayrollRecordModal = this.toggleAddPayrollRecordModal.bind(this);
@@ -168,8 +169,8 @@ class AuthTaxTypeTotalGrid extends React.Component {
                         <button id='addPeriodicPayrollRec' style={buttonStyle} value="<span style='font-size:1rem;font-weight:400;'>Add Payroll Record</span>" />
                     </JqxButtonGroup>
                 </div>
-                <Modal size="lg" isOpen={this.state.showAddPayrollRecordModal} toggle={this.toggleAddPayrollRecordModal} onClosed={this.toggleAddPayrollRecordModal}>
-				<ModalHeader>Add Payroll Record</ModalHeader>
+                <Modal size="lg" isOpen={this.state.showAddPayrollRecordModal} toggle={this.toggleAddPayrollRecordModal} onClosed={this.toggleAddPayrollRecordModal} backdrop={this.state.backdrop}>
+				<ModalHeader toggle={this.toggleAddPayrollRecordModal} >Add Payroll Record</ModalHeader>
 				<ModalBody>
 					{addPayrollForm}
 				</ModalBody>
