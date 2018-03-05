@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Alert } from 'reactstrap';
+import {Alert, Modal, ModalHeader, ModalBody, ModalFooter, Button, ButtonGroup} from 'reactstrap';
 import JqxGrid from '../../deps/jqwidgets-react/react_jqxgrid.js';
 import JqxButton from '../../deps/jqwidgets-react/react_jqxbuttons.js';
 import JqxButtonGroup from '../../deps/jqwidgets-react/react_jqxbuttongroup.js';
 import { RN_FILTER_PAYROLL_DATA } from '../../base/constants/RenderNames';
 import PeriodicPayrollRecordForm from './PeriodicPayrollRecordForm';
+import AddPayrollSubmit from "./AddPayrollSubmit";
+import { submit } from 'redux-form'
 class AuthTaxTypeTotalGrid extends React.Component {
     constructor(props) {
         super(props);
@@ -34,12 +36,26 @@ class AuthTaxTypeTotalGrid extends React.Component {
 
             };
         this.state = {
-            source: source
+            source: source,
+            showAddPayrollRecordModal: false,
         };
+        this.toggleAddPayrollRecordModal = this.toggleAddPayrollRecordModal.bind(this);
     }
     goToFilterPage() {
         renderApplication(appAnchor(), RN_FILTER_PAYROLL_DATA);
     }
+    toggleAddPayrollRecordModal() {
+        this.setState({
+            showAddPayrollRecordModal: !this.state.showAddPayrollRecordModal,
+          closeAll: false
+        });
+    }
+    
+    handleSubmit(values) {
+        alert(values);
+        console.log(values);
+    }
+      
     componentDidMount() {
         this.refs.resetBtn.on('click', (event) => {
             this.refs.authTaxTypeTotalGrid.clearselection();
@@ -92,9 +108,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                     alert('Please select at least one payroll record.');
                 }
             }else if(clickedButton[0].id==='addPeriodicPayrollRec'){
-                console.log(this.refs.addRecordForm);
-                console.log(this.refs.addRecordForm.getWrappedInstance());
-                this.refs.addRecordForm.getWrappedInstance().mySubmit();
+                this.toggleAddPayrollRecordModal();
             }
         });
         this.refs.excelExport.on('click', () => {
@@ -131,6 +145,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                 paddingLeft: 16,
                 paddingRight: 16
             }
+        let addPayrollForm = <PeriodicPayrollRecordForm onSubmit={this.handleSubmit}/>
         return (
             <div>
                 <h1><a href="#" onClick={() => this.goToFilterPage()}><i class="fas fa-filter fa-xs" title="Filter Payroll Data"></i></a> Maintain Payroll Data</h1>
@@ -154,7 +169,16 @@ class AuthTaxTypeTotalGrid extends React.Component {
                         <button id='addPeriodicPayrollRec' style={buttonStyle} value="<span style='font-size:1rem;font-weight:400;'>Add Payroll Record</span>" />
                     </JqxButtonGroup>
                 </div>
-                <PeriodicPayrollRecordForm ref='addRecordForm'/>
+                <Modal size="lg" isOpen={this.state.showAddPayrollRecordModal} toggle={this.toggleAddPayrollRecordModal} onClosed={this.toggleAddPayrollRecordModal}>
+				<ModalHeader>Add Payroll Record</ModalHeader>
+				<ModalBody>
+					{addPayrollForm}
+				</ModalBody>
+				<ModalFooter>
+                    <Button color="secondary" className="btn btn-primary mr-auto" onClick={this.toggleAddPayrollRecordModal}>Cancel</Button>
+                    <AddPayrollSubmit/>
+  				</ModalFooter>
+			    </Modal>
                 <JqxGrid ref='authTaxTypeTotalGrid'
                     width={'100%'} source={dataAdapter} pageable={true}
                     sortable={false} altrows={true} enabletooltips={false}

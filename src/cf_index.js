@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 
 import configureStore from './base/config/configureStore';
 
+import VarianceChartContainer from './app/variance/VarianceChartContainer';
+
 import MonthlyPaymentChartContainer from './app/payments/MonthlyPaymentChartContainer';
 import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 
@@ -14,6 +16,7 @@ import {getApiUrl} from './base/config/confAPI';
 import {getAppConf} from './base/config/confAction';
 
 import {loadMonthlyChartData} from './app/payments/paymentsAction';
+import {loadVarianceChartData} from './app/variance/varianceAction';
 
 import * as rname from './base/constants/RenderNames';
 
@@ -22,6 +25,7 @@ let store = configureStore();
 getApiUrl().then(appconf => {
     console.log(appconf);
     store.dispatch(getAppConf(appconf));
+    store.dispatch(loadVarianceChartData());
     store.dispatch(loadMonthlyChartData());
 }).catch(error => {
     throw (error);
@@ -34,11 +38,9 @@ getApiUrl().then(appconf => {
  */
 function renderApplication(elem,renderName){
     setAppAnchor(elem);
-    if(renderName===rname.RN_ADD_EMPLOYEE){
-        renderAddEmployeeForm(elem);
-    }else if(renderName===rname.RN_EMPLOYEE_GRID){
-        renderEmployeeGrid(elem);
-    }else if(renderName===rname.RN_MONTHLY_CHART){
+    if(renderName===rname.RN_VARIANCE_CHART){
+        renderVarianceChart(elem);
+    }else if(renderName===rname.RN_LIABILITIES_CHART){
         renderMonthlyPaymentsChart(elem);
     }else if(renderName===rname.RN_FILTER_PAYROLL_DATA){
         renderFilterPayrollData(elem);
@@ -103,20 +105,9 @@ function appAnchor(){
  * renderEmployeeGrid
  * @param {*} elem 
  */
-function renderEmployeeGrid(elem) {
+function renderVarianceChart(elem) {
     ReactDOM.render(<Provider store={store}>
-        <GrdReportComponent/>
-        </Provider>,
-        document.getElementById(elem));
-}
-/**
- * renderAddEmployeeForm
- * @param {*} elem 
- */
-function renderAddEmployeeForm(elem) {
-    ReactDOM.render(
-        <Provider store={store}>
-        <EmployeeFormContainer/>
+        <VarianceChartContainer/>
         </Provider>,
         document.getElementById(elem));
 }

@@ -29,6 +29,11 @@ export function required(value) {
 		return 'Required';
 	}
 }
+export function requiredSelect(value) {
+	if (isEmpty(value) || value < 0) {
+		return 'Required';
+	}
+}
 
 export function minLength(min) {
 	return value => {

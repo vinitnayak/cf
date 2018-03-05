@@ -15,6 +15,9 @@
     <script type="text/javascript" src="./res/js/jqwidgets/jqxgrid.export.js"></script>
     <script type="text/javascript" src="./res/js/jqwidgets/jqxscrollbar.js"></script>
 
+    <script type="text/javascript" src="./res/js/jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="./res/js/jqwidgets/jqxchart.core.js"></script>
+
     <script type="text/javascript" src="./res/js/jqwidgets/jqxmenu.js"></script>
     <script type="text/javascript" src="./res/js/jqwidgets/jqxcheckbox.js"></script>
     <script type="text/javascript" src="./res/js/jqwidgets/jqxlistbox.js"></script>
@@ -154,7 +157,8 @@
       <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
       <ul class="navbar-primary-menu">
         <li>
-          <a href="#" onclick="return loadspa('spa3')"><span class="nav-label"><i class="far fa-chart-bar"></i> Monthly Payments Chart</span></a>
+          <a href="#" onclick="return loadspa('spa1')"><span class="nav-label"><i class="fas fa-chart-pie"></i> Variance Data</span></a>
+          <a href="#" onclick="return loadspa('spa3')"><span class="nav-label"><i class="far fa-chart-bar"></i> 2018 Liabilities</span></a>
           <a href="#" onclick="return loadspa('spa10')"><span class="nav-label"><i class="fas fa-filter fa-sm"></i> Maintain Payroll Data</span></a>
         </li>
       </ul>
@@ -171,8 +175,10 @@
     <script type="text/javascript">
       function loadspa(spa) {
           unMountNMountContainerNode();
-          if(spa=='spa3'){
-            renderApplication('_compliancefactory_id','monthlypaymentschart');
+          if(spa=='spa1'){
+            renderApplication('_compliancefactory_id','variancechart');
+          }else if(spa=='spa3'){
+            renderApplication('_compliancefactory_id','liabilitieschart');
           }else if(spa=='spa10'){
             renderApplication('_compliancefactory_id','filterpayrolldata');
           }else{

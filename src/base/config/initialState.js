@@ -1,6 +1,7 @@
 export default {
   appconf:{},
   monthlychartdata:[],
+  variancechartdata:[],
   periodicdata:{
     filtertype:'',
     filterby:'',
