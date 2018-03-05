@@ -56,7 +56,7 @@ class PeriodicPayrollRecordForm extends Component {
 			<Card>
 				<CardBody>
 						<Field name="companyname" component={renderSelectField} label="Company Name"  placeholder="Select a company..." >
-						 { companies.map(comp => <option value={comp.id}>{comp.company}</option>) }
+						 { companies.map(comp => <option value={comp.company}>{comp.company}</option>) }
 						</Field>
 						<Field name="payrollid" label="Payroll ID" component={renderField} type="text" />
 						<Field name="payrollname" label="Payroll Name" component={renderField} type="text" />

@@ -52,7 +52,6 @@ class AuthTaxTypeTotalGrid extends React.Component {
     }
     
     handleSubmit(values) {
-        alert(values);
         console.log(values);
     }
       
