@@ -148,7 +148,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
         let addPayrollForm = <PeriodicPayrollRecordForm onSubmit={this.handleSubmit}/>
         return (
             <div>
-                <h1><a href="#" onClick={() => this.goToFilterPage()}><i class="fas fa-filter fa-xs" title="Filter Payroll Data"></i></a> Maintain Payroll Data</h1>
+                <h1>Maintain Payroll Data <a href="#" onClick={() => this.goToFilterPage()}><i class="fas fa-filter fa-xs" title="Filter Payroll Data"></i></a></h1>
                 <Alert color="primary">
                     {data.filterlabel}
                 </Alert>

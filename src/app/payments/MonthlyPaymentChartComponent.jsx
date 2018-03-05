@@ -9,7 +9,7 @@ class MonthlyPaymentChartComponent extends Component {
         let titlePadding = { left: 90, top: 0, right: 0, bottom: 10 };
         let xAxis =
             {
-                dataField: 'Month',
+                dataField: 'Quarter',
                 showGridLines: true
             };
         let seriesGroups =
@@ -29,22 +29,21 @@ class MonthlyPaymentChartComponent extends Component {
                         tickMarksColor: '#888888'
                     },
                     series: [
-                        { dataField: 'Keith', displayText: 'Keith' },
-                        { dataField: 'Erica', displayText: 'Erica' },
-                        { dataField: 'George', displayText: 'George' }
+                        { dataField: 'Unprepared', displayText: 'Unprepared' },
+                        { dataField: 'Prepared', displayText: 'Prepared' },
+                        { dataField: 'Paid', displayText: 'Paid' }
                     ]
                 }
             ];
         return (
-            <div className="cBox boxTools col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"> 
-            <h1>Monthly Payments</h1>  
+            <div> 
+            <JqxButton ref='printBtn' value='Print' width={80} />
             <JqxChart style={{ width: 850, height: 500 }} className='monthlyChart'
-                title={'Monthly Payment to users'} description={'Payment received by each user in perticular month'}
+                title={'2018 Liabilities'} description={'2018 Liabilities Unprepared, Prepared and Paid Quarterly'}
                 showLegend={true} enableAnimations={true} padding={padding}
                 titlePadding={titlePadding} source={mothlyChartData} xAxis={xAxis}
                 colorScheme={'scheme01'} seriesGroups={seriesGroups}
             />
-            <JqxButton style={{ float: 'left' }} ref='printBtn' value='Print' width={80} />
             </div>
         )
     }

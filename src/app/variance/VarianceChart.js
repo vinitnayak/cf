@@ -8,8 +8,8 @@ class VarianceChart extends React.Component {
             {
                 datatype: 'json',
                 datafields: [
-                    { name: 'Browser' },
-                    { name: 'Share' }
+                    { name: 'authttype' },
+                    { name: 'variance' }
                 ],
                 localdata: variancechartdata
             };
@@ -26,8 +26,8 @@ class VarianceChart extends React.Component {
                         series:
                         [
                             {
-                                dataField: 'Share',
-                                displayText: 'Browser',
+                                dataField: 'variance',
+                                displayText: 'authttype',
                                 labelRadius: 170,
                                 initialAngle: 15,
                                 radius: 145,
@@ -42,8 +42,8 @@ class VarianceChart extends React.Component {
                     }
                 ];
             return (
-                <JqxChart style={{ width: 850, height: 500 }}
-                    title={'Variance Data'} description={'Browser variance data by browser share'}
+                <JqxChart style={{ width: 870, height: 500 }}
+                    title={'Variance Data For Bailey\'s Baskets - Kronos'} description={'Variance data by Authority/Tax Type'}
                     showLegend={true} enableAnimations={true} padding={padding} showBorderLine={true}
                     titlePadding={titlePadding} source={dataAdapter} legendLayout={legendLayout}
                     colorScheme={'scheme02'} seriesGroups={seriesGroups}
