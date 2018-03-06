@@ -69,7 +69,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
             this.refs.authTaxTypeTotalGrid.sortby('id', 'desc');
             this.toggleSuccess();
             this.toggleAddPayrollRecordModal();
-            this.interval = setInterval(this.tick.bind(this), 2000);
+            this.interval = setInterval(this.tick.bind(this), 3000);
 			return response
 		}).catch(error => {
 			throw new SubmissionError(error)
@@ -177,7 +177,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                     {data.filterlabel}
                 </Alert>
                 <Alert color="success" isOpen={this.state.addSuccess}>
-                    Periodic Payroll Record Successfully added!
+                    Periodic Payroll Record Successfully Added!
                 </Alert>
                 <div>
                     <div style={{ float: 'left', marginBottom: 20 }}>
