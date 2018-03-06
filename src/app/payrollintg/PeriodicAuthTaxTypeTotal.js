@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import AuthTaxTypeTotalGrid from './AuthTaxTypeTotalGrid'
-import {testaction}  from './periodicAction';
+import {addPayrollRecord, testaction}  from './periodicAction';
 
 class PeriodicAuthTaxTypeTotal extends React.Component {
     renderGrid(periodicdata){
@@ -21,6 +21,6 @@ function mapStateToProps(state) {
     }
 }
 function mapDispatchToProps(dispatch) {
-    return { actions: bindActionCreators({ testaction }, dispatch) }
+    return { actions: bindActionCreators({ addPayrollRecord,testaction }, dispatch) }
  }
 export default connect(mapStateToProps,mapDispatchToProps, null, { withRef: true })(PeriodicAuthTaxTypeTotal);

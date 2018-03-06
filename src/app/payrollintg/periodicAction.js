@@ -32,6 +32,22 @@ export function loadPeriodicAuthTaxTypeTotal(periodicdata) {
         });
     };
 }
+export function addPayrollRecord(values) {
+    return function (dispatch,getState) {
+      const state = getState();
+      return periodicApi.addPayrollRecord(values,state.appconf.SVCS_CONTEXT_URL).then(values => {
+        dispatch(createPayrollRecordSuccess(values));
+        return values;
+      }).catch(error => {
+        throw(error);
+      });
+    };
+  }
+  export function createPayrollRecordSuccess(values) {
+    console.log('createPayrollRecordSuccess');
+    console.log(values);
+    return {type: types.PAYROLL_RECORD_CREATE_SUCCESS, values};
+  }
 export function testaction(periodicdata) {
     return {type:'TESTACTION', periodicdata};
 }

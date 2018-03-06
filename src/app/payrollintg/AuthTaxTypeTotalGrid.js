@@ -39,11 +39,19 @@ class AuthTaxTypeTotalGrid extends React.Component {
             source: source,
             backdrop: 'static',
             showAddPayrollRecordModal: false,
+            addSuccess:false
         };
         this.toggleAddPayrollRecordModal = this.toggleAddPayrollRecordModal.bind(this);
+        this.toggleSuccess = this.toggleSuccess.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     goToFilterPage() {
         renderApplication(appAnchor(), RN_FILTER_PAYROLL_DATA);
+    }
+    toggleSuccess(){
+        this.setState({
+            addSuccess: !this.state.addSuccess
+        });
     }
     toggleAddPayrollRecordModal() {
         this.setState({
@@ -54,6 +62,22 @@ class AuthTaxTypeTotalGrid extends React.Component {
     
     handleSubmit(values) {
         console.log(values);
+        values.status='Received';
+        this.props.actions.addPayrollRecord(values).then(response => {
+            this.state.source.localdata=this.props.periodicdata;
+            this.refs.authTaxTypeTotalGrid.updatebounddata();
+            this.refs.authTaxTypeTotalGrid.sortby('id', 'desc');
+            this.toggleSuccess();
+            this.toggleAddPayrollRecordModal();
+            this.interval = setInterval(this.tick.bind(this), 2000);
+			return response
+		}).catch(error => {
+			throw new SubmissionError(error)
+		})
+    }
+    tick(){
+        clearInterval(this.interval);
+        this.toggleSuccess();
     }
       
     componentDidMount() {
@@ -145,12 +169,15 @@ class AuthTaxTypeTotalGrid extends React.Component {
                 paddingLeft: 16,
                 paddingRight: 16
             }
-        let addPayrollForm = <PeriodicPayrollRecordForm onSubmit={this.handleSubmit}/>
+        let addPayrollForm = <PeriodicPayrollRecordForm onSubmit={ this.handleSubmit}/>
         return (
             <div>
                 <h1>Maintain Payroll Data <a href="#" onClick={() => this.goToFilterPage()}><i class="fas fa-filter fa-xs" title="Filter Payroll Data"></i></a></h1>
                 <Alert color="primary">
                     {data.filterlabel}
+                </Alert>
+                <Alert color="success" isOpen={this.state.addSuccess}>
+                    Periodic Payroll Record Successfully added!
                 </Alert>
                 <div>
                     <div style={{ float: 'left', marginBottom: 20 }}>
@@ -176,7 +203,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
 				</ModalBody>
 				<ModalFooter>
                     <Button color="secondary" className="btn btn-primary mr-auto" onClick={this.toggleAddPayrollRecordModal}>Cancel</Button>
-                    <AddPayrollSubmit/>
+                    <AddPayrollSubmit ref="mySubmit"/>
   				</ModalFooter>
 			    </Modal>
                 <JqxGrid ref='authTaxTypeTotalGrid'
