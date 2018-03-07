@@ -1,0 +1,575 @@
+{
+  "employees": [
+    {
+      "first_name": "George",
+      "last_name": "G",
+      "email": "gg@gmail.com",
+      "id": 3
+    },
+    {
+      "first_name": "Keith",
+      "last_name": "K",
+      "email": "kk@gmail.com",
+      "id": 4
+    },
+    {
+      "first_name": "Erica",
+      "last_name": "C",
+      "email": "erica@gmail.com",
+      "id": 5
+    },
+    {
+      "first_name": "dsfsdf",
+      "last_name": "sdfsdf",
+      "email": "dfsdfsdfsd@gmailc.om",
+      "id": 6
+    }
+  ],
+  "books": [
+    {
+      "id": 101,
+      "title": "Zero to One",
+      "author": "Peter Thiel",
+      "year_published": 2014,
+      "rating": 4.03
+    },
+    {
+      "id": 102,
+      "title": "The Origin of Species",
+      "author": "Charles Darwin",
+      "year_published": 1889,
+      "rating": 4.2
+    }
+  ],
+  "importdata": [
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "12:9:17",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "catalina-tribes.jar",
+      "id": 1
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "12:10:39",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "ef.properties.bak",
+      "id": 2
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "14:37:16",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "catalina-tribes.jar",
+      "id": 3
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "16:36:40",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "tomcat-i18n-ja.jar",
+      "id": 4
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "16:39:27",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "catalina.jar",
+      "id": 5
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "16:42:46",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "sso_keystore.jks",
+      "id": 6
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "16:53:12",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "el-api.jar",
+      "id": 7
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "18:12:25",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "TF10APIJNI.jar",
+      "id": 8
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-13-2",
+      "importtm": "18:18:20",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "tomcat-dbcp.jar",
+      "id": 9
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-14-2",
+      "importtm": "9:35:41",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "sqljdbc4.jar",
+      "id": 10
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-14-2",
+      "importtm": "9:40:3",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "ef.properties",
+      "id": 11
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-14-2",
+      "importtm": "9:58:24",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "efOLD.properties",
+      "id": 12
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-14-2",
+      "importtm": "9:58:38",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "el-api.jar",
+      "id": 13
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-14-2",
+      "importtm": "10:51:46",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "efOLD.properties",
+      "id": 14
+    },
+    {
+      "custid": "10102",
+      "importdt": "2018-14-2",
+      "importtm": "10:51:58",
+      "type": "Import",
+      "importdata": "Garnishment",
+      "filename": "ecj-4.2.2.jar",
+      "id": 15
+    }
+  ],
+  "companytotaldata": [
+    {
+      "id": 1,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "01/15/2016",
+      "payrolldate": "03/15/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    },
+    {
+      "id": 2,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "02/15/2016",
+      "payrolldate": "02/15/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "grosswages": "13662500.00",
+      "taxablegrosswages": "232400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1800.50",
+      "status": "Received"
+    },
+    {
+      "id": 3,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "03/15/2016",
+      "payrolldate": "03/31/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    },
+    {
+      "id": 4,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "03/01/2016",
+      "payrolldate": "03/31/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    },
+    {
+      "id": 5,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "01/15/2016",
+      "payrolldate": "03/15/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    }
+  ],
+  "authtaxtypetotaldata": [
+    {
+      "id": 1,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "01/15/2016",
+      "payrolldate": "03/15/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "taxcode": "AKSUI-1U---MH3M",
+      "authname": "ALASKA",
+      "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
+      "rescode": "Resident",
+      "payrollsource": "",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    },
+    {
+      "id": 2,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "02/15/2016",
+      "payrolldate": "02/15/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "taxcode": "AKSUI-1U---MH3M",
+      "authname": "ALASKA",
+      "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
+      "rescode": "Resident",
+      "payrollsource": "",
+      "grosswages": "13662500.00",
+      "taxablegrosswages": "232400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1800.50",
+      "status": "Received"
+    },
+    {
+      "id": 3,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "03/15/2016",
+      "payrolldate": "03/31/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "taxcode": "AKSUI-1U---MH3M",
+      "authname": "ALASKA",
+      "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
+      "rescode": "Resident",
+      "payrollsource": "",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    },
+    {
+      "id": 4,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "03/01/2016",
+      "payrolldate": "03/31/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "taxcode": "AKSUI-1U---MH3M",
+      "authname": "ALASKA",
+      "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
+      "rescode": "Resident",
+      "payrollsource": "",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    },
+    {
+      "id": 5,
+      "companyname": "Bailey's Baskets - Kronos",
+      "checkdate": "01/15/2016",
+      "payrolldate": "03/15/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "taxcode": "AKSUI-1U---MH3M",
+      "authname": "ALASKA",
+      "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
+      "rescode": "Resident",
+      "payrollsource": "",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    },
+    {
+      "id": 6,
+      "companyname": "Bailey's Baskets",
+      "checkdate": "01/15/2016",
+      "payrolldate": "03/15/2016 02:58:00 PM",
+      "payrollname": "Semi-Monthly Regular 01/15/2016",
+      "taxcode": "AZSUT-1Z---MH3G",
+      "authname": "ARIZONA",
+      "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
+      "rescode": "Resident",
+      "payrollsource": "",
+      "grosswages": "210000.00",
+      "taxablegrosswages": "222400.00",
+      "taxableamount": "200000.00",
+      "taxamount": "1515.50",
+      "status": "Received"
+    },
+    {
+      "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
+      "payrollid": "34535",
+      "payrollname": "34534",
+      "checkdate": "2018-03-09",
+      "taxcode": "34534",
+      "rescode": "Nonresident",
+      "grosswages": "345345",
+      "taxablegrosswages": "34534",
+      "taxableamount": "534",
+      "taxamount": "44",
+      "empcount": "444",
+      "empcountday12": "1",
+      "status": "Received",
+      "id": 7
+    },
+    {
+      "companyname": "Baileys Baskets - Kronos (237654321)",
+      "payrollid": "4334",
+      "payrollname": "34t34",
+      "checkdate": "2018-03-13",
+      "taxcode": "34345",
+      "rescode": "Nonresident",
+      "grosswages": "34534",
+      "taxablegrosswages": "5345345",
+      "taxableamount": "345",
+      "taxamount": "445",
+      "empcount": "45",
+      "empcountday12": "4",
+      "status": "Received",
+      "id": 8
+    },
+    {
+      "companyname": "Baileys Baskets - Kronos (237654321)",
+      "payrollid": "232342",
+      "payrollname": "3423423",
+      "checkdate": "2018-03-01",
+      "taxcode": "234234",
+      "rescode": "Default Resident",
+      "grosswages": "2342",
+      "taxablegrosswages": "42342",
+      "taxableamount": "34234",
+      "taxamount": "23",
+      "empcount": "3",
+      "empcountday12": "3",
+      "status": "Received",
+      "id": 9
+    },
+    {
+      "companyname": "Baileys Baskets - Kronos (237654321)",
+      "payrollid": "r234234",
+      "payrollname": "24234",
+      "checkdate": "2018-03-09",
+      "taxcode": "234234",
+      "rescode": "Default Resident",
+      "grosswages": "234234",
+      "taxablegrosswages": "23424",
+      "taxableamount": "23423",
+      "taxamount": "4234",
+      "empcount": "234234",
+      "empcountday12": "2323",
+      "status": "Received",
+      "id": 10
+    },
+    {
+      "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
+      "payrollid": "2323",
+      "payrollname": "234234",
+      "checkdate": "2018-03-09",
+      "taxcode": "234234",
+      "rescode": "Nonresident",
+      "grosswages": "23423",
+      "taxablegrosswages": "4234324",
+      "taxableamount": "324",
+      "taxamount": "3223423",
+      "empcount": "23423",
+      "empcountday12": "1",
+      "status": "Received",
+      "id": 11
+    },
+    {
+      "companyname": "Baileys Baskets - Kronos (237654321)",
+      "payrollid": "323424",
+      "payrollname": "23423",
+      "checkdate": "2018-03-09",
+      "taxcode": "234234",
+      "rescode": "Nonresident as of Jan 1",
+      "grosswages": "234234",
+      "taxablegrosswages": "23423",
+      "taxableamount": "234",
+      "taxamount": "234",
+      "empcount": "232",
+      "empcountday12": "1",
+      "status": "Received",
+      "id": 12
+    },
+    {
+      "companyname": "Baileys Baskets - Kronos (237654321)",
+      "payrollid": "6666",
+      "payrollname": "6666",
+      "checkdate": "2018-03-07",
+      "taxcode": "34534534",
+      "rescode": "Default Resident",
+      "grosswages": "345345",
+      "taxablegrosswages": "34",
+      "taxableamount": "4",
+      "taxamount": "4",
+      "empcount": "4",
+      "empcountday12": "4",
+      "status": "Received",
+      "id": 13
+    },
+    {
+      "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
+      "payrollid": "wrwer",
+      "payrollname": "werwerw",
+      "checkdate": "2018-03-13",
+      "taxcode": "232342",
+      "rescode": "Default Resident",
+      "grosswages": "2423",
+      "taxablegrosswages": "233",
+      "taxableamount": "3453453",
+      "taxamount": "34534",
+      "empcount": "3",
+      "empcountday12": "3",
+      "status": "Received",
+      "id": 14
+    },
+    {
+      "companyname": "Baileys Baskets - Kronos (237654321)",
+      "payrollid": "ueruerreh",
+      "payrollname": "34534534",
+      "checkdate": "2018-03-16",
+      "taxcode": "3434534",
+      "rescode": "Nonresident",
+      "grosswages": "345345",
+      "taxablegrosswages": "345",
+      "taxableamount": "34534",
+      "taxamount": "3453",
+      "empcount": "53434534",
+      "empcountday12": "3434",
+      "status": "Received",
+      "id": 15
+    },
+    {
+      "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
+      "payrollid": "34534",
+      "payrollname": "534534",
+      "checkdate": "2018-03-08",
+      "taxcode": "343434",
+      "rescode": "Resident",
+      "grosswages": "34345",
+      "taxablegrosswages": "34534",
+      "taxableamount": "34534",
+      "taxamount": "5345345",
+      "empcount": "34345",
+      "empcountday12": "4",
+      "status": "Received",
+      "id": 16
+    },
+    {
+      "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
+      "payrollid": "AfterServerID101",
+      "payrollname": "AfterServerID101",
+      "checkdate": "2018-03-07",
+      "rescode": "Default Resident",
+      "taxcode": "ryryry",
+      "grosswages": "32342",
+      "taxablegrosswages": "234324",
+      "taxableamount": "234324",
+      "taxamount": "324",
+      "empcount": "33",
+      "empcountday12": "33",
+      "status": "Received",
+      "id": 17
+    }
+  ],
+  "monthlyChartdata": [
+    {
+      "Quarter": "Q1",
+      "Unprepared": 2500,
+      "Prepared": 3500,
+      "Paid": 3000
+    },
+    {
+      "Quarter": "Q2",
+      "Unprepared": 1500,
+      "Prepared": 2500,
+      "Paid": 2000
+    },
+    {
+      "Quarter": "Q3",
+      "Unprepared": 3000,
+      "Prepared": 2000,
+      "Paid": 1500
+    },
+    {
+      "Quarter": "Q4",
+      "Unprepared": 3500,
+      "Prepared": 2500,
+      "Paid": 4500
+    }
+  ],
+  "variancedata": [
+    {
+      "authttype": "Alabama/Withholding Tax",
+      "variance": "33.3"
+    },
+    {
+      "authttype": "Alaska/Employer Unemployment Tax",
+      "variance": "26.5"
+    },
+    {
+      "authttype": "California/Withholding Tax",
+      "variance": "24.4"
+    },
+    {
+      "authttype": "Arkansas/Withholding Tax",
+      "variance": "7.0"
+    },
+    {
+      "authttype": "Georgia/Withholding Tax",
+      "variance": "4.6"
+    },
+    {
+      "authttype": "Arizona/Withholding Tax",
+      "variance": "3.2"
+    }
+  ]
+}
