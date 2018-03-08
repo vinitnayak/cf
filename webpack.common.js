@@ -77,6 +77,6 @@ module.exports ={
         new CleanWebpackPlugin(['dist/*.*', 'dist/res', 'dist/src']),
         new ExtractTextPlugin({filename: 'cfBundle.css', allChunks: true}),
         new ProgressBarPlugin(),
-        new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['echo "Webpack End"'],onBuildExit:['npm run start-server']})
+        new WebpackShellPlugin({onBuildEnd:['npm run start-server']})
     ]
 };
