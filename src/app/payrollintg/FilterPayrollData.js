@@ -151,14 +151,14 @@ class FilterPayrollData extends Component {
                     <Label for="filterBy" sm={2}>Date range</Label>
                     <Col sm={4}>
                         <JqxDateTimeInput ref='myDateTimeInputSt' height={25} animationType={'fade'}
-                            dropDownHorizontalAlignment={'left'} disabled={true} value={`${firstDay}`}/>
+                            dropDownHorizontalAlignment={'left'} disabled={true} value={`${firstDay}`} formatString="MM-dd-yyyy"/>
                     </Col>
                     <Col sm={1}>
                         <Label for="filterBy">To</Label>
                     </Col>
                     <Col sm={4}>
                         <JqxDateTimeInput ref='myDateTimeInputEn' height={25} animationType={'fade'}
-                            dropDownHorizontalAlignment={'left'} disabled={true} value={`${lastDay}`}/>
+                            dropDownHorizontalAlignment={'left'} disabled={true} value={`${lastDay}`} formatString="MM-dd-yyyy"/>
                     </Col>
                     <Col sm={1}></Col>
                 </FormGroup>
