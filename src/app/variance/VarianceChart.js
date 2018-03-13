@@ -70,7 +70,7 @@ class VarianceChart extends React.Component {
                                 formatFunction: (value) => {
                                     if (isNaN(value))
                                         return value;
-                                    return parseFloat(value) + '%';
+                                    return parseFloat(value);
                                 },
                             }
                         ]

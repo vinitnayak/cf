@@ -430,27 +430,27 @@
   "variancedata": [
     {
       "authttype": "Alabama/Withholding Tax",
-      "variance": "33.3"
+      "variance": "1500"
     },
     {
       "authttype": "Alaska/Employer Unemployment Tax",
-      "variance": "26.5"
+      "variance": "3000"
     },
     {
       "authttype": "California/Withholding Tax",
-      "variance": "24.4"
+      "variance": "2500"
     },
     {
       "authttype": "Arkansas/Withholding Tax",
-      "variance": "7.0"
+      "variance": "1000"
     },
     {
       "authttype": "Georgia/Withholding Tax",
-      "variance": "4.6"
+      "variance": "2000"
     },
     {
       "authttype": "Arizona/Withholding Tax",
-      "variance": "3.2"
+      "variance": "1000"
     }
   ]
 }
