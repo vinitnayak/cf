@@ -1,7 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import JqxChart from '../../deps/jqwidgets-react/react_jqxchart.js';
+import {divPrnStyle} from '../../base/constants/AppConstants';
+import {Tooltip} from 'reactstrap';
 class VarianceChart extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            printtt: false
+        }
+        this.togglePrint=this.togglePrint.bind(this);
+    }
+    togglePrint() {
+        this.setState({
+            printtt: !this.state.printtt
+        });
+    }
+    printMe(){
+        let content = window.document.getElementsByClassName('varianceChart')[0].outerHTML;
+        let newWindow = window.open('', '', 'width=800, height=500'),
+            document = newWindow.document.open(),
+            pageContent =
+                '<!DOCTYPE html>' +
+                '<html>' +
+                '<head>' +
+                '<meta charset="utf-8" />' +
+                '<title>Variance data by Authority/Tax Type</title>' +
+                '</head>' +
+                '<body>' + content + '</body></html>';
+        try {
+            document.write(pageContent);
+            document.close();
+            newWindow.print();
+            newWindow.close();
+        }
+        catch (error) {
+        }
+    }
     render() {
         let variancechartdata = this.props.variancechartdata;
         let source =
@@ -42,12 +77,19 @@ class VarianceChart extends React.Component {
                     }
                 ];
             return (
+                <div>
                 <JqxChart style={{ width: 870, height: 500 }}
+                    className='varianceChart'
                     title={'Variance Data For Bailey\'s Baskets - Kronos'} description={'Variance data by Authority/Tax Type'}
                     showLegend={true} enableAnimations={true} padding={padding} showBorderLine={true}
                     titlePadding={titlePadding} source={dataAdapter} legendLayout={legendLayout}
                     colorScheme={'scheme02'} seriesGroups={seriesGroups}
                 />
+                <a href="#"  style={divPrnStyle} onClick={() => this.printMe()} id="printid"> <i class="fas fa-print"></i></a>
+                <Tooltip placement="left" isOpen={this.state.printtt} target="printid" toggle={this.togglePrint}>
+                    Print Variance Data Chart
+                </Tooltip>
+                </div>
             )
     }
 }

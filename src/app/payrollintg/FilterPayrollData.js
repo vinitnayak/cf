@@ -117,13 +117,13 @@ class FilterPayrollData extends Component {
         var periodicdata = this.getRequestData(1);
         periodicdata.companytotaldata=[];
         this.props.loadPeriodicCompanyTotal(periodicdata);
-        renderApplication(appAnchor(),RN_PERIODIC_COMPNAY_TOTAL);
+        renderCFApplication(appAnchor(),RN_PERIODIC_COMPNAY_TOTAL);
     }
     onAuthTaxTypeTotal(){
         var periodicdata = this.getRequestData(2);
         periodicdata.authtaxtypetotaldata=[];
         this.props.loadPeriodicAuthTaxTypeTotal(periodicdata);
-        renderApplication(appAnchor(),RN_AUTH_TAXTYPE_TOTAL);
+        renderCFApplication(appAnchor(),RN_AUTH_TAXTYPE_TOTAL);
     }
     render() {
         var periodicdata={};
@@ -149,26 +149,26 @@ class FilterPayrollData extends Component {
                 </FormGroup>
                 <FormGroup row>
                     <Label for="filterBy" sm={2}>Date range</Label>
-                    <Col sm={4}>
-                        <JqxDateTimeInput ref='myDateTimeInputSt' height={25} animationType={'fade'}
+                    <Col>
+                        <JqxDateTimeInput ref='myDateTimeInputSt' height={25} width={125} animationType={'fade'}
                             dropDownHorizontalAlignment={'left'} disabled={true} value={`${firstDay}`} formatString="MM-dd-yyyy"/>
                     </Col>
-                    <Col sm={1}>
+                    <Col>
                         <Label for="filterBy">To</Label>
                     </Col>
-                    <Col sm={4}>
-                        <JqxDateTimeInput ref='myDateTimeInputEn' height={25} animationType={'fade'}
+                    <Col>
+                        <JqxDateTimeInput ref='myDateTimeInputEn' height={25} width={125} animationType={'fade'}
                             dropDownHorizontalAlignment={'left'} disabled={true} value={`${lastDay}`} formatString="MM-dd-yyyy"/>
                     </Col>
-                    <Col sm={1}></Col>
+                    <Col sm={4}></Col>
                 </FormGroup>
                 <FormGroup row>
                     <Label for="filterByMonthr" sm={2}></Label>
                     <Col sm={10}>
                         <ButtonGroup>
-                            <Button outline color="primary" onClick={() => this.onSetMonthRange(1)} active={this.state.mSelected === 1}>Current Month</Button>
-                            <Button outline color="primary" onClick={() => this.onSetMonthRange(2)} active={this.state.mSelected === 2}>Previous Month</Button>
-                            <Button outline color="primary" onClick={() => this.onSetMonthRange(3)} active={this.state.mSelected === 3}>Current Quarter</Button>
+                            <Button outline color="primary" size="sm"  onClick={() => this.onSetMonthRange(1)} active={this.state.mSelected === 1}>Current Month</Button>
+                            <Button outline color="primary" size="sm"  onClick={() => this.onSetMonthRange(2)} active={this.state.mSelected === 2}>Previous Month</Button>
+                            <Button outline color="primary" size="sm"  onClick={() => this.onSetMonthRange(3)} active={this.state.mSelected === 3}>Current Quarter</Button>
                         </ButtonGroup>
                     </Col>
                 </FormGroup>
@@ -176,8 +176,8 @@ class FilterPayrollData extends Component {
             footerButtons =
             <ModalFooter>
                         <Button color="secondary" className="btn btn-primary mr-auto" onClick={this.toggle}>Cancel</Button>
-                        <Button  onClick={() => this.onViewCompanyTotal()}  color="success">View Company Total</Button>{' '}
-                        <Button  onClick={() => this.onAuthTaxTypeTotal()} color="success">View Authority/Tax Type Total</Button>
+                        <Button  onClick={() => this.onViewCompanyTotal()}  color="success">View By Company</Button>{' '}
+                        <Button  onClick={() => this.onAuthTaxTypeTotal()} color="success">View By Authority/Tax Type</Button>
             </ModalFooter>
 
         }else{
@@ -210,7 +210,7 @@ class FilterPayrollData extends Component {
         return (
             <div>
                 <Modal size="lg" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
-                    <ModalHeader toggle={this.toggle}>Filter Maintain Payroll Data</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Maintain Payroll Data</ModalHeader>
                     <ModalBody>
                         <Form>
                             <FormGroup row>

@@ -5,8 +5,8 @@
     "badge": "cf",
     "bundleName": "cfBundle.js",
     "version": "1",
-    "buildNo":"2018_03_05_CF",
-    "renderFunction": "renderApplication",
+    "buildNo":"2018_03_09_CF",
+    "renderFunction": "renderCFApplication",
     "macVersion":"1.0", 
     "areas": [ {
         "id":"bbd90ab7-2a84-4ad3-998e-705dbc73cdac",

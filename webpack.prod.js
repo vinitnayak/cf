@@ -4,6 +4,10 @@ const baseConfig = require('./webpack.common.js');
 var path = require('path');
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+if (process.env.NODE_ENV === "buildprod") {
+  baseConfig.plugins.pop()
+}
 module.exports = merge(baseConfig, {
   devtool: '',
   plugins: [

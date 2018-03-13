@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Alert } from 'reactstrap';
+import { Alert,Tooltip} from 'reactstrap';
 import JqxGrid from '../../deps/jqwidgets-react/react_jqxgrid.js';
 import JqxButton from '../../deps/jqwidgets-react/react_jqxbuttons.js';
 import JqxButtonGroup from '../../deps/jqwidgets-react/react_jqxbuttongroup.js';
 import { RN_FILTER_PAYROLL_DATA } from '../../base/constants/RenderNames';
-
+import {divStyle,divStyleFirst,divStyleBot,divStyleFirstBot,divStyleR} from '../../base/constants/AppConstants';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import UIAlert from '../common/UIAlert';
 class CompanyTotalGrid extends React.Component {
     constructor(props) {
         super(props);
@@ -28,111 +30,185 @@ class CompanyTotalGrid extends React.Component {
                 localdata: data
 
             };
+            this.toggleExpExl=this.toggleExpExl.bind(this);
+            this.toggleExpCsv=this.toggleExpCsv.bind(this);
+            this.toggleSelAll=this.toggleSelAll.bind(this);
+            this.toggleRstAll=this.toggleRstAll.bind(this);
+            this.togglePstSel=this.togglePstSel.bind(this);
+            this.toggleDelSel=this.toggleDelSel.bind(this);
+            this.toggleFilDat=this.toggleFilDat.bind(this);
+            this.hoverOff=this.hoverOff.bind(this);
+            this.hoverOn=this.hoverOn.bind(this);
+            this.hideUIAlert=this.hideUIAlert.bind(this);
         this.state = {
-            source: source
+            source: source,
+            exptoExlTip:false,
+            exptoCsvTip:false,
+            selectAll:false,
+            resetAll:false,
+            postSelected:false,
+            deleSelected:false,
+            filterData:false,
+            hover: false,
+            showAlert:false,
+            aheader:'',
+            abody:'',
+            abtnlbl:''
         };
     }
+    hoverOn(){
+        this.setState({ hover: true });
+    }
+    hoverOff(){ 
+        this.setState({ hover: false });    
+    }
     goToFilterPage() {
-        renderApplication(appAnchor(), RN_FILTER_PAYROLL_DATA);
+        renderCFApplication(appAnchor(), RN_FILTER_PAYROLL_DATA);
+    }
+    exportToExcel(){
+        this.refs.companyTotalGrid.exportdata('xls', 'PeriodicCompanyTotal');
+    }
+    exportToCsv(){
+        this.refs.companyTotalGrid.exportdata('csv', 'PeriodicCompanyTotal');
+    }
+    selectAllClk(){
+        this.refs.companyTotalGrid.selectallrows(); 
+    }
+    resetAll(){
+        this.refs.companyTotalGrid.clearselection();
+    }
+    postSelected(){
+        let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
+        if(selIndexes.length >0){
+            selIndexes.forEach(index => {
+                let data = this.refs.companyTotalGrid.getrowdata(index);
+                alert('Selected for Post : '+ Object.values(data));
+            });
+        }else{
+            this.setState({
+                showAlert: !this.state.showAlert,
+                aheader:'Post',
+                abody:'Please select at least one payroll record to post.'
+            });
+        }
+    }
+    deleteSelected(){
+        let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
+        if(selIndexes.length >0){
+            selIndexes.forEach(index => {
+                let data = this.refs.companyTotalGrid.getrowdata(index);
+                alert('Selected for Delete : '+ Object.values(data));
+            });
+        }else{
+            this.setState({
+                showAlert: !this.state.showAlert,
+                aheader:'Delete',
+                abody:'Please select at least one payroll record to delete.'
+            });
+        }
+    }
+    toggleExpExl() {
+        this.setState({
+            exptoExlTip: !this.state.exptoExlTip
+        });
+    }
+    toggleExpCsv() {
+        this.setState({
+            exptoCsvTip: !this.state.exptoCsvTip
+        });
+    }
+    toggleSelAll(){
+        this.setState({
+            selectAll: !this.state.selectAll
+        });
+    }
+    toggleRstAll(){
+        this.setState({
+            resetAll: !this.state.resetAll
+        });
+    }
+    togglePstSel(){
+        this.setState({
+            postSelected: !this.state.postSelected
+        });
+    }
+    toggleDelSel(){
+        this.setState({
+            deleSelected: !this.state.deleSelected
+        });
+    }
+    toggleFilDat(){
+        this.setState({
+            filterData: !this.state.filterData
+        }); 
     }
     componentDidMount() {
-        this.refs.resetBtnct.on('click', (event) => {
-            this.refs.companyTotalGrid.clearselection();
-            var periodicdata = {};
-            this.props.actions.testaction(periodicdata);
-        });
-        this.refs.selectAllBtnct.on('click', (event) => {
-            this.refs.companyTotalGrid.selectallrows(); 
 
-        });
-        this.refs.myButtonGroupct.on('buttonclick', (event) => {
-            let clickedButton = event.args.button;
-            if(clickedButton[0].id==='processPostct'){
-                let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
-                if(selIndexes.length >0){
-                    selIndexes.forEach(index => {
-                        let data = this.refs.companyTotalGrid.getrowdata(index);
-                        alert('Selected for Post : '+ Object.values(data));
-                    });
-                }else{
-                    alert('Please select at least one payroll record.');
-                }
-            }else if(clickedButton[0].id==='processDeletect'){
-                let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
-                if(selIndexes.length >0){
-                    selIndexes.forEach(index => {
-                        let data = this.refs.companyTotalGrid.getrowdata(index);
-                        alert('Selected for Delete : '+ Object.values(data));
-                    });
-                }else{
-                    alert('Please select at least one payroll record.');
-                }
-            }
-        });
-        this.refs.excelExportct.on('click', () => {
-            this.refs.companyTotalGrid.exportdata('xls', 'PeriodicCompanyTotal');
-        });
-        this.refs.csvExportct.on('click', () => {
-            this.refs.companyTotalGrid.exportdata('csv', 'PeriodicCompanyTotal');
+    }
+    hideUIAlert(){
+        this.setState({
+            showAlert: !this.state.showAlert
         });
     }
     render() {
         let dataAdapter = new $.jqx.dataAdapter(this.state.source);
+        let uiAlert = <UIAlert handleClick={this.hideUIAlert}  showAlert={this.state.showAlert} aheader={this.state.aheader} abody={this.state.abody} abtnlbl={'Ok'}/>;
         let data = this.props.periodicdata;
         let columns =
             [
-                { text: 'Company Name', datafield: 'companyname', width: 'auto' },
-                { text: 'Check Date', datafield: 'checkdate', width: 'auto', cellsformat: 'MM-dd-yyyy' },
-                { text: 'Payroll Run Date/Time', datafield: 'payrolldate', width: 'auto', cellsformat: 'MM-dd-yyyy hh:mm:00 tt' },
-                { text: 'Payroll Name', datafield: 'payrollname', width: 'auto' },
-                { text: 'Gross Wages', datafield: 'grosswages', align: 'right', cellsalign: 'right', width: 'auto', cellsformat: 'c2' },
-                { text: 'Taxable Gross Wages', datafield: 'taxablegrosswages', align: 'right', cellsalign: 'right', width: 'auto', cellsformat: 'c2' },
-                { text: 'Taxable Amount', datafield: 'taxableamount', align: 'right', cellsalign: 'right', width: 'auto', cellsformat: 'c2' },
-                { text: 'Tax Amount', datafield: 'taxamount', align: 'right', cellsalign: 'right', width: 'auto', cellsformat: 'c2' },
-                { text: 'Status', datafield: 'status', align: 'left', cellsalign: 'left', width: 'auto' }
+                { text: 'Company Name', datafield: 'companyname', width: 'auto', filtertype: 'input'},
+                { text: 'Check Date', datafield: 'checkdate', width: 'auto', cellsformat: 'MM-dd-yyyy' ,filtertype: 'range'},
+                { text: 'Payroll Run Date/Time', datafield: 'payrolldate', width: 'auto', cellsformat: 'MM-dd-yyyy hh:mm:00 tt', filtertype: 'range' },
+                { text: 'Payroll Name', datafield: 'payrollname', width: 'auto',filtertype: 'input'},
+                { text: 'Gross Wages', datafield: 'grosswages', align: 'right', cellsalign: 'right', width: 'auto', cellsformat: 'c2',filtertype: 'number' },
+                { text: 'Taxable Gross Wages', datafield: 'taxablegrosswages', align: 'right', cellsalign: 'right', width: 'auto', cellsformat: 'c2',filtertype: 'number', },
+                { text: 'Taxable Amount', datafield: 'taxableamount', align: 'right', cellsalign: 'right', width: 'auto', cellsformat: 'c2',filtertype: 'number', },
+                { text: 'Tax Amount', datafield: 'taxamount', align: 'right', cellsalign: 'right', width: 'auto', cellsformat: 'c2',filtertype: 'number', },
+                { text: 'Status', datafield: 'status', align: 'left', cellsalign: 'left', width: 'auto',filtertype: 'checkedlist'}
             ];
-        let buttonStyle =
-            {
-                paddingTop: 8,
-                paddingBottom: 8,
-                paddingLeft: 16,
-                paddingRight: 16
-            }
-
         return (
             <div>
-                <h1>Maintain Payroll Data <a href="#" onClick={() => this.goToFilterPage()}><i class="fas fa-filter fa-xs" title="Filter Payroll Data"></i></a></h1>
+                <h1>Maintain Payroll Data 
+                    <a href="#" onClick={() => this.goToFilterPage()} id="filterDataId"><i class="fas fa-filter fa-xs" title="Filter Payroll Data"></i></a>
+                    <Tooltip placement="right" isOpen={this.state.filterData} target="filterDataId" toggle={this.toggleFilDat}>
+                    Filter Payroll Data
+                    </Tooltip>
+                </h1>
                 <Alert color="primary">
                     {data.filterlabel}
                 </Alert>
-                <div>
-                    <div style={{ float: 'left', marginBottom: 20 }}>
-                        <JqxButton ref='selectAllBtnct' width={140} height={40} value="<span style='font-size:1rem;font-weight:400;'>Select All</span>" template={'success'} />
-                    </div>
-                    <div style={{ float: 'left', marginLeft: 10 }}>
-                        <JqxButton ref='resetBtnct' width={140} height={40} value="<span style='font-size:1rem;font-weight:400;'>Reset</span>" template={'success'} />
-                    </div>
-                </div>
-                <div style={{ marginBottom: 20 }}>
-                    <JqxButtonGroup ref='myButtonGroupct' mode={'radio'} template={'success'} className="float-right">
-                        <button id='processPostct' style={buttonStyle} value="<span style='font-size:1rem;font-weight:400;'> Process Post</span>" />
-                        <button id='processDeletect' style={buttonStyle} value="<span style='font-size:1rem;font-weight:400;'> Process Delete</span>" />
-                    </JqxButtonGroup>
-                </div>
+                <a href="#"  style={divStyleFirst}  onClick={() => this.selectAllClk()} id="selectAllid"><i class='fas fa-check-square fa-lg'></i></a>
+                <Tooltip placement="top" isOpen={this.state.selectAll} target="selectAllid" toggle={this.toggleSelAll}>
+                    Select All
+                </Tooltip>
+                <a href="#"  style={divStyle} onClick={() => this.resetAll()} id="resetAll"><i class='fas fa-redo-alt fa-lg'></i></a>
+                <Tooltip placement="right" isOpen={this.state.resetAll} target="resetAll" toggle={this.toggleRstAll}>
+                    Reset Selection
+                </Tooltip>
+                <a href="#" style={divStyleR} onClick={() => this.deleteSelected()} id="deleteSelected"><i class='fas fa-minus-square fa-lg'></i></a>
+                <Tooltip placement="top" isOpen={this.state.deleSelected} target="deleteSelected" toggle={this.toggleDelSel}>
+                    Delete Selected
+                </Tooltip> 
+                <a href="#" style={divStyleR} onClick={() => this.postSelected()} id="postSelected"><i class='fas fa-envelope-square fa-lg'></i></a>
+                <Tooltip placement="right" isOpen={this.state.postSelected} target="postSelected" toggle={this.togglePstSel}>
+                    Post Selected
+                </Tooltip>
                 <JqxGrid ref='companyTotalGrid'
                     width={'100%'} source={dataAdapter} pageable={true}
-                    sortable={false} altrows={true} enabletooltips={false}
+                    sortable={false} altrows={false} enabletooltips={false}
                     autoheight={true} editable={false} columns={columns}
+                    filterable={true} showfilterrow={true}
+                    theme={'energyblue'}
                     selectionmode={'multiplerowsextended'}/>
-
-                <div style={{ marginTop: 20 }}>
-                    <div style={{ float: 'left' }}>
-                        <JqxButton ref='excelExportct' width={145} height={40} value="<i class='fas fa-file-excel fa-sm'></i><span style='font-size:1rem;font-weight:400;'> Export to Excel</span>" template={'success'} />
-                    </div>
-                    <div style={{ float: 'left', marginLeft: 10 }}>
-                        <JqxButton  ref='csvExportct' width={145} height={40} value="<i class='fas fa-file-code fa-sm'></i><span style='font-size:1rem;font-weight:400;'> Export to CSV<span>" template={'success'}/>
-                    </div>
-                </div>
+                <a href="#"  style={divStyleFirstBot} onClick={() => this.exportToExcel()} id="exportToExcel"><i class='fas fa-table fa-lg'></i></a>
+                <Tooltip placement="bottom" isOpen={this.state.exptoExlTip} target="exportToExcel" toggle={this.toggleExpExl}>
+                    Export To Excel
+                </Tooltip>
+                <a href="#"  style={divStyleBot} onClick={() => this.exportToCsv()} id="exportToCsv"><i class='fas fa-pen-square fa-lg'></i></a>
+                <Tooltip placement="right" isOpen={this.state.exptoCsvTip} target="exportToCsv" toggle={this.toggleExpCsv}>
+                    Export To CSV
+                </Tooltip>
+                {uiAlert}
             </div>
         );
     }

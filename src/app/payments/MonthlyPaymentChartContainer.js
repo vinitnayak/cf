@@ -17,7 +17,7 @@ class MonthlyPaymentChartContainer extends Component {
     }
     render(){
         return (
-        <div className="cBox boxTools col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <div>
             {this.renderMonthlyChart(this.props.monthlychartdata)}
         </div>
         )

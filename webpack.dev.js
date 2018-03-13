@@ -7,9 +7,11 @@ module.exports = merge(baseConfig, {
   devtool: 'source-map',
 });
 if (process.env.NODE_ENV === "development") {
-    var express = require('express')
-    const port = 8080;
-    var app = express()
-    app.use('/', express.static(BUILD_DIR))
-    app.listen(port)
+  var express = require('express')
+  const port = 8080;
+  var app = express()
+  app.use('/', express.static(BUILD_DIR))
+  app.listen(port)
+}else if (process.env.NODE_ENV === "builddev") {
+  baseConfig.plugins.pop();
 }

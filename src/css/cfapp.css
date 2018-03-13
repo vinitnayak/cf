@@ -18,3 +18,12 @@ button {
     height: 60px;
     width: 120px;
 }
+.gridbtn {
+    background-color:none; /* Blue background */
+    border: none; /* Remove borders */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+.gridbtn:hover {
+    background-color: #1e7e34;
+}

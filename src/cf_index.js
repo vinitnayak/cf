@@ -31,12 +31,12 @@ getApiUrl().then(appconf => {
     throw (error);
 });
 /**
- * renderApplication 
+ * renderCFApplication 
  * master branch
  * @param {*} elem 
  * @param {*} renderName 
  */
-function renderApplication(elem,renderName){
+function renderCFApplication(elem,renderName){
     setAppAnchor(elem);
     if(renderName===rname.RN_VARIANCE_CHART){
         renderVarianceChart(elem);
@@ -112,7 +112,7 @@ function renderVarianceChart(elem) {
         document.getElementById(elem));
 }
 
-module.exports = renderApplication;
-window.renderApplication = renderApplication;
+module.exports = renderCFApplication;
+window.renderCFApplication = renderCFApplication;
 module.exports=appAnchor;
 window.appAnchor=appAnchor;
