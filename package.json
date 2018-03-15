@@ -14,7 +14,7 @@
     "start-dev": "NODE_ENV=development webpack --watch --config ./webpack.dev.js",
     "build-prod": "NODE_ENV=buildprod webpack --config ./webpack.prod.js",
     "start-prod": "NODE_ENV=production webpack --watch --config ./webpack.prod.js",
-    "start-server": "json-server --watch ./server/db.json --routes ./server/routes.json --port 30024",
+    "start-server": "json-server --watch ./uitests/server/db.json --routes ./uitests/server/routes.json --port 30024",
     "test": "jest --coverage"
   },
   "keywords": [],
