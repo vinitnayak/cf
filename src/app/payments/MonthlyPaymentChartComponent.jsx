@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import JqxChart from '../../deps/jqwidgets-react/react_jqxchart.js';
 import JqxButton from '../../deps/jqwidgets-react/react_jqxbuttons.js';
-import {divPrnStyle} from '../../base/constants/AppConstants';
-import {Tooltip} from 'reactstrap';
+import { divPrnStyle } from '../../base/constants/AppConstants';
+import { Tooltip } from 'reactstrap';
 class MonthlyPaymentChartComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            printtt: false
+            pprinttt: false
         }
-        this.togglePrint=this.togglePrint.bind(this);
+        this.togglePPrint = this.togglePPrint.bind(this);
     }
-    togglePrint() {
+    togglePPrint() {
         this.setState({
-            printtt: !this.state.printtt
+            pprinttt: !this.state.pprinttt
         });
     }
-    printMe(){
+    printMe() {
         let content = window.document.getElementsByClassName('monthlyChart')[0].outerHTML;
         let newWindow = window.open('', '', 'width=800, height=500'),
             document = newWindow.document.open(),
@@ -38,7 +38,7 @@ class MonthlyPaymentChartComponent extends Component {
         catch (error) {
         }
     }
-    render(){
+    render() {
         let mothlyChartData = this.props.monthlychartdata;
         let padding = { left: 5, top: 5, right: 5, bottom: 5 };
         let titlePadding = { left: 90, top: 0, right: 0, bottom: 10 };
@@ -54,35 +54,63 @@ class MonthlyPaymentChartComponent extends Component {
                     columnsGapPercent: 50,
                     seriesGapPercent: 0,
                     valueAxis:
-                    {
-                        unitInterval: 500,
-                        minValue: 0,
-                        maxValue: 5000,
-                        displayValueAxis: true,
-                        description: 'Payment in thousands',
-                        axisSize: 'auto',
-                        tickMarksColor: '#888888'
-                    },
+                        {
+                            unitInterval: 500,
+                            minValue: 0,
+                            maxValue: 5000,
+                            displayValueAxis: true,
+                            description: 'Payment in thousands',
+                            axisSize: 'auto',
+                            tickMarksColor: '#888888'
+                        },
                     series: [
-                        { dataField: 'Unprepared', displayText: 'Unprepared' },
-                        { dataField: 'Prepared', displayText: 'Prepared' },
-                        { dataField: 'Paid', displayText: 'Paid' }
+                        {
+                            dataField: 'Unprepared', displayText: 'Unprepared', labels: {
+                                visible: true,
+                                verticalAlignment: 'top',
+                                offset: { x: 0, y: -20 }
+                            },
+                            formatFunction: (value) => {
+                                return Math.abs(value / 1000) + 'K';
+                            }
+                        },
+                        {
+                            dataField: 'Prepared', displayText: 'Prepared', labels: {
+                                visible: true,
+                                verticalAlignment: 'top',
+                                offset: { x: 0, y: -20 }
+                            },
+                            formatFunction: (value) => {
+                                return Math.abs(value / 1000) + 'K';
+                            }
+                        },
+                        {
+                            dataField: 'Paid', displayText: 'Paid', labels: {
+                                visible: true,
+                                verticalAlignment: 'top',
+                                offset: { x: 0, y: -20 }
+                            },
+                            formatFunction: (value) => {
+                                return Math.abs(value / 1000) + 'K';
+                            }
+                        }
                     ]
                 }
             ];
         return (
-            <div> 
-            
-            <JqxChart style={{ width: 850, height: 500 }} className='monthlyChart'
-                title={'2018 Liabilities'} description={'2018 Liabilities Unprepared, Prepared and Paid Quarterly'}
-                showLegend={true} enableAnimations={true} padding={padding}
-                titlePadding={titlePadding} source={mothlyChartData} xAxis={xAxis}
-                colorScheme={'scheme01'} seriesGroups={seriesGroups}
-            />
-            <a href="#"  style={divPrnStyle} onClick={() => this.printMe()} id="printid"> <i class="fas fa-print"></i></a>
-            <Tooltip placement="left" isOpen={this.state.printtt} target="printid" toggle={this.togglePrint}>
-                Print 2018 Liabilities Chart
-            </Tooltip>
+            <div class="row justify-content-center">
+                <div>
+                <JqxChart style={{ width: 850, height: 500 }} className='monthlyChart'
+                    title={'2018 Liabilities'} description={'2018 Liabilities Unprepared, Prepared and Paid Quarterly'}
+                    showLegend={true} enableAnimations={true} padding={padding}
+                    titlePadding={titlePadding} source={mothlyChartData} xAxis={xAxis}
+                    colorScheme={'scheme01'} seriesGroups={seriesGroups}
+                />
+                 <a href="#" style={divPrnStyle} onClick={() => this.printMe()} id="pprintid"> <i class="fas fa-print"></i></a>
+                <Tooltip placement="left" isOpen={this.state.pprinttt} target="pprintid" toggle={this.togglePPrint}>
+                    Print 2018 Liabilities Chart
+                </Tooltip>
+                </div>
             </div>
         )
     }

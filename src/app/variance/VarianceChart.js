@@ -77,6 +77,7 @@ class VarianceChart extends React.Component {
                     }
                 ];
             return (
+                <div class="row justify-content-center">
                 <div>
                 <JqxChart style={{ width: 870, height: 500 }}
                     className='varianceChart'
@@ -85,10 +86,11 @@ class VarianceChart extends React.Component {
                     titlePadding={titlePadding} source={dataAdapter} legendLayout={legendLayout}
                     colorScheme={'scheme02'} seriesGroups={seriesGroups}
                 />
-                <a href="#"  style={divPrnStyle} onClick={() => this.printMe()} id="printid"> <i class="fas fa-print"></i></a>
-                <Tooltip placement="left" isOpen={this.state.printtt} target="printid" toggle={this.togglePrint}>
+                <a href="#"  style={divPrnStyle} onClick={() => this.printMe()} id="vprintid"> <i class="fas fa-print"></i></a>
+                <Tooltip placement="left" isOpen={this.state.printtt} target="vprintid" toggle={this.togglePrint}>
                     Print Variance Data Chart
                 </Tooltip>
+                </div>
                 </div>
             )
     }
