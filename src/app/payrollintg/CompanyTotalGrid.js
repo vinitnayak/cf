@@ -8,6 +8,7 @@ import { RN_FILTER_PAYROLL_DATA } from '../../base/constants/RenderNames';
 import {divStyle,divStyleFirst,divStyleBot,divStyleFirstBot,divStyleR} from '../../base/constants/AppConstants';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import UIAlert from '../common/UIAlert';
+import UIConfirm from '../common/UIConfirm';
 class CompanyTotalGrid extends React.Component {
     constructor(props) {
         super(props);
@@ -40,6 +41,8 @@ class CompanyTotalGrid extends React.Component {
             this.hoverOff=this.hoverOff.bind(this);
             this.hoverOn=this.hoverOn.bind(this);
             this.hideUIAlert=this.hideUIAlert.bind(this);
+            this.handleConfirmOk = this.handleConfirmOk.bind(this);
+            this.handleConfirmCancel = this.handleConfirmCancel.bind(this);
         this.state = {
             source: source,
             exptoExlTip:false,
@@ -53,7 +56,10 @@ class CompanyTotalGrid extends React.Component {
             showAlert:false,
             aheader:'',
             abody:'',
-            abtnlbl:''
+            abtnlbl:'',
+            showConfirm:false,
+            cheader:'',
+            cbody:''
         };
     }
     hoverOn(){
@@ -76,6 +82,9 @@ class CompanyTotalGrid extends React.Component {
     }
     resetAll(){
         this.refs.companyTotalGrid.clearselection();
+        this.setState({
+            showConfirm: !this.state.showConfirm
+        });
     }
     postSelected(){
         let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
@@ -85,27 +94,30 @@ class CompanyTotalGrid extends React.Component {
                 alert('Selected for Post : '+ Object.values(data));
             });
         }else{
-            this.setState({
-                showAlert: !this.state.showAlert,
-                aheader:'Post',
-                abody:'Please select at least one payroll record to post.'
-            });
+            this.showAlert(true,'Delete','Please select at least one payroll record to delete.');
         }
     }
     deleteSelected(){
         let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
         if(selIndexes.length >0){
-            selIndexes.forEach(index => {
-                let data = this.refs.companyTotalGrid.getrowdata(index);
-                alert('Selected for Delete : '+ Object.values(data));
-            });
+            this.showConfirm(true,'Confirm?', 'Are you sure you want to delete payroll record(s)?');
         }else{
-            this.setState({
-                showAlert: !this.state.showAlert,
-                aheader:'Delete',
-                abody:'Please select at least one payroll record to delete.'
-            });
+            this.showAlert(true,'Delete','Please select at least one payroll record to delete.');
         }
+    }
+    showConfirm(cshow, cheader, cbody){
+        this.setState({
+            showConfirm: cshow,
+            cheader:cheader,
+            cbody:cbody
+        });
+    }
+    showAlert(ashow,aheader,abody){
+        this.setState({
+            showAlert: ashow,
+            aheader:aheader,
+            abody:abody
+        });
     }
     toggleExpExl() {
         this.setState({
@@ -150,9 +162,27 @@ class CompanyTotalGrid extends React.Component {
             showAlert: !this.state.showAlert
         });
     }
+    handleConfirmOk(){
+        console.log('hideUIConfirmOk');
+        this.handleConfirmCancel();
+        let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
+        if(selIndexes.length >0){
+            selIndexes.forEach(index => {
+                let data = this.refs.companyTotalGrid.getrowdata(index);
+                alert('Selected for Delete : '+ Object.values(data));
+            });
+        }
+    }
+    handleConfirmCancel(){
+        console.log('hideUIConfirmCancel');
+        this.setState({
+            showConfirm: !this.state.showConfirm
+        });
+    }
     render() {
         let dataAdapter = new $.jqx.dataAdapter(this.state.source);
-        let uiAlert = <UIAlert handleClick={this.hideUIAlert}  showAlert={this.state.showAlert} aheader={this.state.aheader} abody={this.state.abody} abtnlbl={'Ok'}/>;
+        let uiAlert =   <UIAlert handleClick={this.hideUIAlert}  showAlert={this.state.showAlert} aheader={this.state.aheader} abody={this.state.abody} abtnlbl={'Ok'}/>;
+        let uiConfirm = <UIConfirm handleOk={this.handleConfirmOk} handleCancel={this.handleConfirmCancel}  showConfirm={this.state.showConfirm} cheader={this.state.cheader} cbody={this.state.cbody} okbtnlbl={'Ok'} cancelbtnlbl={'Cancel'}/>;
         let data = this.props.periodicdata;
         let columns =
             [
@@ -209,6 +239,7 @@ class CompanyTotalGrid extends React.Component {
                     Export To CSV
                 </Tooltip>
                 {uiAlert}
+                {uiConfirm}
             </div>
         );
     }

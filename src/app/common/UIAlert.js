@@ -11,9 +11,9 @@ class UIAlert extends React.Component {
             abtnlbl: this.props.abtnlbl,
             closeAll: false
         };
-        this.toggleNested = this.toggleNested.bind(this);
+        this.toggleUIAlert = this.toggleUIAlert.bind(this);
     }
-    toggleNested() {
+    toggleUIAlert() {
         this.setState({
             showAlert: !this.state.showAlert
         });
@@ -22,11 +22,11 @@ class UIAlert extends React.Component {
     render() {
         return (
             <div>
-                <Modal isOpen={this.props.showAlert} toggle={this.toggleNested} backdrop="static">
+                <Modal isOpen={this.props.showAlert} toggle={this.toggleUIAlert} backdrop="static">
                     <ModalHeader>{this.props.aheader}</ModalHeader>
                     <ModalBody>{this.props.abody}</ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={() => this.toggleNested()}>{this.props.abtnlbl}</Button>
+                        <Button color="primary" onClick={() => this.toggleUIAlert()}>{this.props.abtnlbl}</Button>
                     </ModalFooter>
                 </Modal>
             </div>
