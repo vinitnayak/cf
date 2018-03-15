@@ -5,7 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const APP_DIR = path.resolve(__dirname, 'src');
-const WebpackShellPlugin = require('webpack-shell-plugin');
+
 module.exports ={
     entry: [	
 		APP_DIR + '/cf_index.js' // Your appʼs entry point
@@ -76,7 +76,6 @@ module.exports ={
         ]),  
         new CleanWebpackPlugin(['dist/*.*', 'dist/res', 'dist/src']),
         new ExtractTextPlugin({filename: 'cfBundle.css', allChunks: true}),
-        new ProgressBarPlugin(),
-        new WebpackShellPlugin({onBuildEnd:['npm run start-server']})
+        new ProgressBarPlugin()
     ]
 };
