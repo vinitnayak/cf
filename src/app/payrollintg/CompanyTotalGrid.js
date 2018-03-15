@@ -181,8 +181,8 @@ class CompanyTotalGrid extends React.Component {
     }
     render() {
         let dataAdapter = new $.jqx.dataAdapter(this.state.source);
-        let uiAlert =   <UIAlert handleClick={this.hideUIAlert}  showAlert={this.state.showAlert} aheader={this.state.aheader} abody={this.state.abody} abtnlbl={'Ok'}/>;
-        let uiConfirm = <UIConfirm handleOk={this.handleConfirmOk} handleCancel={this.handleConfirmCancel}  showConfirm={this.state.showConfirm} cheader={this.state.cheader} cbody={this.state.cbody} okbtnlbl={'Ok'} cancelbtnlbl={'Cancel'}/>;
+        let uiAlert    =   <UIAlert handleClick={this.hideUIAlert}  showAlert={this.state.showAlert} aheader={this.state.aheader} abody={this.state.abody} abtnlbl={'Ok'}/>;
+        let uiDelConfirm = <UIConfirm handleOk={this.handleConfirmOk} handleCancel={this.handleConfirmCancel}  showConfirm={this.state.showConfirm} cheader={this.state.cheader} cbody={this.state.cbody} okbtnlbl={'Ok'} cancelbtnlbl={'Cancel'}/>;
         let data = this.props.periodicdata;
         let columns =
             [
@@ -239,7 +239,7 @@ class CompanyTotalGrid extends React.Component {
                     Export To CSV
                 </Tooltip>
                 {uiAlert}
-                {uiConfirm}
+                {uiDelConfirm}
             </div>
         );
     }
