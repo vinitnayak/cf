@@ -91,7 +91,7 @@ class CompanyTotalGrid extends React.Component {
                 alert('Selected for Post : '+ Object.values(data));
             });
         }else{
-            this.showAlert(true,'Delete','Please select at least one payroll record to delete.');
+            this.showAlert(true,'Post','Please select at least one payroll record to post.');
         }
     }
     deleteSelected(){
