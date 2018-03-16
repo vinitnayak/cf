@@ -219,6 +219,9 @@ class AuthTaxTypeTotalGrid extends React.Component {
     }
     resetAllAuth(){
         this.refs.authTaxTypeTotalGrid.clearselection();
+        this.setState({
+            showAlert: false
+        });
     }
     toggleRstAllAuth(){
         this.setState({
