@@ -82,9 +82,6 @@ class CompanyTotalGrid extends React.Component {
     }
     resetAll(){
         this.refs.companyTotalGrid.clearselection();
-        this.setState({
-            showConfirm: !this.state.showConfirm
-        });
     }
     postSelected(){
         let selIndexes = this.refs.companyTotalGrid.getselectedrowindexes();
