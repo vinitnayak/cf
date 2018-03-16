@@ -59,7 +59,7 @@ function renderPeriodicAuthTaxTypeTotal(elem){
         <Provider store={store}>
         <PeriodicAuthTaxTypeTotal/>
         </Provider>,
-        document.getElementById(elem));
+       document.querySelector('#'+elem));
 }
 /**
  * renderPeriodicCompanyTotal
@@ -70,7 +70,7 @@ function renderPeriodicCompanyTotal(elem){
         <Provider store={store}>
         <PeriodicCompanyTotal/>
         </Provider>,
-        document.getElementById(elem));
+        document.querySelector('#'+elem));
 }
 /**
  * renderFilterPayrollData
@@ -81,7 +81,7 @@ function renderFilterPayrollData(elem) {
         <Provider store={store}>
         <FilterPayrollData/>
         </Provider>,
-        document.getElementById(elem));
+       document.querySelector('#'+elem));
 }
 /**
  * renderMonthlyPaymentsChart
@@ -92,7 +92,7 @@ function renderMonthlyPaymentsChart(elem) {
         <Provider store={store}>
         <MonthlyPaymentChartContainer/>
         </Provider>,
-        document.getElementById(elem));
+       document.querySelector('#'+elem));
 }
 var APP_ANCHOR;
 function setAppAnchor(elem){
@@ -109,7 +109,7 @@ function renderVarianceChart(elem) {
     ReactDOM.render(<Provider store={store}>
         <VarianceChartContainer/>
         </Provider>,
-        document.getElementById(elem));
+       document.querySelector('#'+elem));
 }
 
 module.exports = renderCFApplication;
