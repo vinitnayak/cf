@@ -97,6 +97,7 @@ function renderMonthlyPaymentsChart(elem) {
 var APP_ANCHOR;
 function setAppAnchor(elem){
    APP_ANCHOR = elem;
+   ReactDOM.unmountComponentAtNode(document.querySelector('#'+elem));
 }
 function appAnchor(){
    return APP_ANCHOR;

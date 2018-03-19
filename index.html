@@ -176,7 +176,6 @@
     <script type="text/javascript" src="cfBundle.js"></script>
     <script type="text/javascript">
       function loadspa(spa) {
-          unMountNMountContainerNode();
           if(spa=='spa1'){
             renderCFApplication('_compliancefactory_id','variancechart');
           }else if(spa=='spa3'){
@@ -184,6 +183,7 @@
           }else if(spa=='spa10'){
             renderCFApplication('_compliancefactory_id','filterpayrolldata');
           }else{
+            unMountNMountContainerNode();
             renderWelcomePage('_compliancefactory_id');
           }
       }

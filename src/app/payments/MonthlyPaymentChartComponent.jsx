@@ -100,7 +100,7 @@ class MonthlyPaymentChartComponent extends Component {
         return (
             <div class="row justify-content-center">
                 <div>
-                <JqxChart style={{ width: 850, height: 500 }} className='monthlyChart'
+                <JqxChart style={{ width: 870, height: 500 }} className='monthlyChart'
                     title={'2018 Liabilities'} description={'2018 Liabilities Unprepared, Prepared and Paid Quarterly'}
                     showLegend={true} enableAnimations={true} padding={padding}
                     titlePadding={titlePadding} source={mothlyChartData} xAxis={xAxis}

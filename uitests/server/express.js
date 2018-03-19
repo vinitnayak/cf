@@ -2,7 +2,7 @@ var path = require('path');
 const BUILD_DIR = path.resolve(__dirname, '../../dist');
 if (process.env.NODE_ENV === "development" || process.env.NODE_ENV ==='production') {
     var express = require('express')
-    const port = 8080;
+    const port = 9090;
     var app = express()
     app.use('/', express.static(BUILD_DIR))
     app.listen(port)
