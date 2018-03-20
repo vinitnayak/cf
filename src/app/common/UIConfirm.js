@@ -29,8 +29,8 @@ class UIConfirm extends React.Component {
                     <ModalHeader>{this.props.cheader}</ModalHeader>
                     <ModalBody>{this.props.cbody}</ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={() => this.toggleUIConfirmOk()}>{this.props.okbtnlbl}</Button>
-                        <Button color="primary" onClick={() => this.toggleUIConfirmCancel()}>{this.props.cancelbtnlbl}</Button>
+                        <Button color="success" onClick={() => this.toggleUIConfirmOk()}>{this.props.okbtnlbl}</Button>
+                        <Button color="secondary" onClick={() => this.toggleUIConfirmCancel()}>{this.props.cancelbtnlbl}</Button>
                     </ModalFooter>
                 </Modal>
             </div>

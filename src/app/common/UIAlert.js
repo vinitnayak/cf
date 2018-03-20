@@ -26,7 +26,7 @@ class UIAlert extends React.Component {
                     <ModalHeader>{this.props.aheader}</ModalHeader>
                     <ModalBody>{this.props.abody}</ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={() => this.toggleUIAlert()}>{this.props.abtnlbl}</Button>
+                        <Button color="success" onClick={() => this.toggleUIAlert()}>{this.props.abtnlbl}</Button>
                     </ModalFooter>
                 </Modal>
             </div>
