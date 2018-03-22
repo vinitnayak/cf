@@ -31,7 +31,7 @@ getApiUrl().then(appconf => {
     throw (error);
 });
 /**
- * renderCFApplication 
+ * renderCFApplication TEST
  * master branch
  * @param {*} elem 
  * @param {*} renderName 
