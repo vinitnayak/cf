@@ -98,9 +98,8 @@ class MonthlyPaymentChartComponent extends Component {
                 }
             ];
         return (
-            <div class="row justify-content-center">
-                <div>
-                <JqxChart style={{ width: 870, height: 500 }} className='monthlyChart'
+            <div class="h-100 w-100">
+                <JqxChart style={{ width: '100%', height: 500 }} className='monthlyChart'
                     title={'2018 Liabilities'} description={'2018 Liabilities Unprepared, Prepared and Paid Quarterly'}
                     showLegend={true} enableAnimations={true} padding={padding}
                     titlePadding={titlePadding} source={mothlyChartData} xAxis={xAxis}
@@ -110,7 +109,6 @@ class MonthlyPaymentChartComponent extends Component {
                 <Tooltip placement="left" isOpen={this.state.pprinttt} target="pprintid" toggle={this.togglePPrint}>
                     Print 2018 Liabilities Chart
                 </Tooltip>
-                </div>
             </div>
         )
     }

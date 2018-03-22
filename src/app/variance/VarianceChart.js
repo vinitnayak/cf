@@ -65,7 +65,6 @@ class VarianceChart extends React.Component {
                                 displayText: 'authttype',
                                 labelRadius: 170,
                                 initialAngle: 15,
-                                radius: 145,
                                 centerOffset: 0,
                                 formatFunction: (value) => {
                                     if (isNaN(value))
@@ -77,9 +76,8 @@ class VarianceChart extends React.Component {
                     }
                 ];
             return (
-                <div class="row justify-content-center">
-                <div>
-                <JqxChart style={{ width: 870, height: 500 }}
+                <div class="h-100 w-100">
+                <JqxChart style={{ width: '100%', height: 500 }}
                     className='varianceChart'
                     title={'Variance Data For Bailey\'s Baskets - Kronos'} description={'Variance data by Authority/Tax Type'}
                     showLegend={true} enableAnimations={true} padding={padding} showBorderLine={true}
@@ -90,7 +88,6 @@ class VarianceChart extends React.Component {
                 <Tooltip placement="left" isOpen={this.state.printtt} target="vprintid" toggle={this.togglePrint}>
                     Print Variance Data Chart
                 </Tooltip>
-                </div>
                 </div>
             )
     }
