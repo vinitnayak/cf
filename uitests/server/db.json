@@ -399,6 +399,25 @@
       "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
       "status": "Received",
       "id": 9
+    },
+    {
+      "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
+      "payrollid": "PAY101",
+      "payrollname": "Test Payroll",
+      "checkdate": "2018-03-22",
+      "taxcode": "BSO010101",
+      "rescode": "Default Resident",
+      "grosswages": "565656",
+      "taxablegrosswages": "565655",
+      "taxableamount": "44664",
+      "taxamount": "46464",
+      "empcount": "44",
+      "empcountday12": "45",
+      "payrolldate": "03/15/2016 02:58:00 PM",
+      "authname": "GEORGIA",
+      "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
+      "status": "Received",
+      "id": 10
     }
   ],
   "monthlyChartdata": [

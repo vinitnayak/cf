@@ -50,7 +50,7 @@ class VarianceChart extends React.Component {
             };
            // let dataAdapter = new $.jqx.dataAdapter(source, { async: false, autoBind: true, loadError: (xhr, status, error) => { alert('Error loading "' + source.url + '" : ' + error); } });
             let dataAdapter = new $.jqx.dataAdapter(source);
-            let legendLayout = { left: 700, top: 160, width: 300, height: 200, flow: 'vertical' };
+            let legendLayout = { left: 0, top: 0, width: 300, height: 200, flow: 'vertical' };
             let padding = { left: 5, top: 5, right: 5, bottom: 5 };
             let titlePadding = { left: 0, top: 0, right: 0, bottom: 10 };
             let seriesGroups =
