@@ -314,7 +314,6 @@ class AuthTaxTypeTotalGrid extends React.Component {
                     sortable={false} altrows={false} enabletooltips={false}
                     autoheight={true} editable={false} columns={columns}
                     filterable={true} showfilterrow={true}
-                    theme={'energyblue'}
                     columnsresize={true} selectionmode={'multiplerowsextended'}/>
                     
                 <a href="#"  style={divStyleFirstBot} onClick={() => this.exportToExcelAuth()} id="exportToExcelAuth"><i class='fas fa-table fa-lg'></i></a>

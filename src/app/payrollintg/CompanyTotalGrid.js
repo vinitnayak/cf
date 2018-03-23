@@ -225,7 +225,6 @@ class CompanyTotalGrid extends React.Component {
                     sortable={false} altrows={false} enabletooltips={false}
                     autoheight={true} editable={false} columns={columns}
                     filterable={true} showfilterrow={true}
-                    theme={'energyblue'}
                     selectionmode={'multiplerowsextended'}/>
                 <a href="#"  style={divStyleFirstBot} onClick={() => this.exportToExcel()} id="exportToExcel"><i class='fas fa-table fa-lg'></i></a>
                 <Tooltip placement="bottom" isOpen={this.state.exptoExlTip} target="exportToExcel" toggle={this.toggleExpExl}>
