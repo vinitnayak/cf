@@ -7,7 +7,7 @@ export function loadMonthlyChartDataSuccess(monthlychartdata) {
 export function loadMonthlyChartData() {
     return function(dispatch,getState) {
         const state = getState();
-        return paymentsApi.getMonthlyChartData(state.appconf.SVCS_CONTEXT_URL).then(monthlychartdata => {
+        return paymentsApi.getMonthlyChartData().then(monthlychartdata => {
         dispatch(loadMonthlyChartDataSuccess(monthlychartdata));
         }).catch(error => {
         throw(error);

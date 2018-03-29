@@ -12,9 +12,6 @@ import FilterPayrollData from './app/payrollintg/FilterPayrollData';
 import PeriodicCompanyTotal from './app/payrollintg/PeriodicCompanyTotal';
 import PeriodicAuthTaxTypeTotal from './app/payrollintg/PeriodicAuthTaxTypeTotal';
 
-import {getApiUrl} from './base/config/confAPI';
-import {getAppConf} from './base/config/confAction';
-
 import {loadMonthlyChartData} from './app/payments/paymentsAction';
 import {loadVarianceChartData} from './app/variance/varianceAction';
 
@@ -22,14 +19,8 @@ import * as rname from './base/constants/RenderNames';
 
 let store = configureStore();
 
-getApiUrl().then(appconf => {
-    console.log(appconf);
-    store.dispatch(getAppConf(appconf));
-    store.dispatch(loadVarianceChartData());
-    store.dispatch(loadMonthlyChartData());
-}).catch(error => {
-    throw (error);
-});
+store.dispatch(loadVarianceChartData());
+store.dispatch(loadMonthlyChartData());
 /**
  * renderCFApplication TEST
  * master branch

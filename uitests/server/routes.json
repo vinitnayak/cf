@@ -1,3 +1,6 @@
 {
-    "/gsws/r/employees/*": "/$1"
+    "/svc/v1/variancedata/*":"/variancedata",
+    "/svc/v1/monthlyChartdata/*":"/monthlyChartdata",
+    "/svc/v1/companytotaldata/*":"/companytotaldata",
+    "/svc/v1/authtaxtypetotaldata/*":"/authtaxtypetotaldata"
 }

@@ -10,7 +10,7 @@ export function loadCompanytotalDataSuccess(periodicdata) {
 export function loadPeriodicCompanyTotal(periodicdata) {
     return function(dispatch,getState) {
         const state = getState();
-        return periodicApi.getPeriodicCompanyTotalData(state.appconf.SVCS_CONTEXT_URL).then(companytotal => {
+        return periodicApi.getPeriodicCompanyTotalData().then(companytotal => {
             periodicdata.companytotaldata = companytotal;
             dispatch(loadCompanytotalDataSuccess(periodicdata));
         }).catch(error => {
@@ -24,7 +24,7 @@ export function loadAuthTaxTypeTotalDataSuccess(periodicdata) {
 export function loadPeriodicAuthTaxTypeTotal(periodicdata) {
     return function(dispatch,getState) {
         const state = getState();
-        return periodicApi.getPeriodicAuthTaxTypeTotalData(state.appconf.SVCS_CONTEXT_URL).then(authtaxtypetotaldata => {
+        return periodicApi.getPeriodicAuthTaxTypeTotalData().then(authtaxtypetotaldata => {
             periodicdata.authtaxtypetotaldata = authtaxtypetotaldata;
             dispatch(loadAuthTaxTypeTotalDataSuccess(periodicdata));
         }).catch(error => {
@@ -35,7 +35,7 @@ export function loadPeriodicAuthTaxTypeTotal(periodicdata) {
 export function addPayrollRecord(values) {
     return function (dispatch,getState) {
       const state = getState();
-      return periodicApi.addPayrollRecord(values,state.appconf.SVCS_CONTEXT_URL).then(values => {
+      return periodicApi.addPayrollRecord(values).then(values => {
         dispatch(createPayrollRecordSuccess(values));
         return values;
       }).catch(error => {

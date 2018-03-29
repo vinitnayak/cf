@@ -6,7 +6,7 @@ export function loadVarianceChartDataSuccess(variancechartdata) {
 export function loadVarianceChartData() {
     return function(dispatch,getState) {
         const state = getState();
-        return varianceApi.getVarianceChartData(state.appconf.SVCS_CONTEXT_URL).then(variancechartdata => {
+        return varianceApi.getVarianceChartData().then(variancechartdata => {
         dispatch(loadVarianceChartDataSuccess(variancechartdata));
         }).catch(error => {
         throw(error);

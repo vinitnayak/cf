@@ -383,17 +383,17 @@
     },
     {
       "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
-      "payrollid": "tryrty",
-      "payrollname": "trtrytryry",
-      "checkdate": "2018-03-15",
-      "taxcode": "4242",
-      "rescode": "Live and Work",
-      "grosswages": "243242",
-      "taxablegrosswages": "4234",
-      "taxableamount": "324",
-      "taxamount": "343",
-      "empcount": "343",
-      "empcountday12": "3",
+      "payrollid": "gdfgdf",
+      "payrollname": "dfgdfgfdg",
+      "checkdate": "2018-03-29",
+      "taxcode": "wefw2342",
+      "rescode": "Resident",
+      "grosswages": "32465634",
+      "taxablegrosswages": "74634563",
+      "taxableamount": "45635",
+      "taxamount": "345345",
+      "empcount": "34534",
+      "empcountday12": "100",
       "payrolldate": "03/15/2016 02:58:00 PM",
       "authname": "GEORGIA",
       "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
@@ -401,23 +401,42 @@
       "id": 9
     },
     {
-      "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
-      "payrollid": "PAY101",
-      "payrollname": "Test Payroll",
-      "checkdate": "2018-03-22",
-      "taxcode": "BSO010101",
-      "rescode": "Default Resident",
-      "grosswages": "565656",
-      "taxablegrosswages": "565655",
-      "taxableamount": "44664",
-      "taxamount": "46464",
-      "empcount": "44",
-      "empcountday12": "45",
+      "companyname": "Baileys Baskets - Kronos (237654321)",
+      "payrollid": "Pay101",
+      "payrollname": "MyPay101",
+      "checkdate": "2018-03-29",
+      "taxcode": "BSI1010101",
+      "rescode": "Nonresident",
+      "grosswages": "8574564",
+      "taxablegrosswages": "786456",
+      "taxableamount": "7466",
+      "taxamount": "45645",
+      "empcount": "45645",
+      "empcountday12": "546",
       "payrolldate": "03/15/2016 02:58:00 PM",
       "authname": "GEORGIA",
       "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
       "status": "Received",
       "id": 10
+    },
+    {
+      "companyname": "Transmitter 00DENNYS _REST (TRANSMITTER)",
+      "payrollid": "trtrrt",
+      "payrollname": "rtrtrtr",
+      "checkdate": "2018-03-29",
+      "taxcode": "BSI1010101",
+      "rescode": "Resident Puerto Rico",
+      "grosswages": "42342344",
+      "taxablegrosswages": "2342",
+      "taxableamount": "234",
+      "taxamount": "234",
+      "empcount": "23423",
+      "empcountday12": "44234",
+      "payrolldate": "03/15/2016 02:58:00 PM",
+      "authname": "GEORGIA",
+      "taxname": "EMPLOYEE UNEMPLOYMENT TAX",
+      "status": "Received",
+      "id": 11
     }
   ],
   "monthlyChartdata": [
@@ -470,6 +489,142 @@
     {
       "authttype": "Arizona/Withholding Tax",
       "variance": "1000"
+    }
+  ],
+  "userdata": [
+    {
+      "userId": 1,
+      "firstName": "FirstName",
+      "lastName": "LastName",
+      "dataset": "DATASET001",
+      "securitytokn": "fhfh484jer843je848rj393jf",
+      "branding": "base64ImageData",
+      "userTheme": "bsiTheme2",
+      "themeList": [
+        "bsiTheme1",
+        "bsiTheme2",
+        "bsiTheme3"
+      ],
+      "applications": [
+        {
+          "id": "5a4f99a6-dc55-4f8d-955c-35385c9e90a1",
+          "name": "ComplianceFactory",
+          "accessIds": [
+            {
+              "bbd90ab7-2a84-4ad3-998e-705dbc73cdac": {
+                "visible": true
+              }
+            },
+            {
+              "6a5a3e8d-7810-41bb-9025-20a955659279": {
+                "visible": true
+              }
+            },
+            {
+              "cc965204-5c21-403d-a706-cd00f863578f": {
+                "visible": true
+              }
+            }
+          ],
+          "permissions": {
+            "printVariance": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "printLiabilities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "postByCompany": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "deleteByCompany": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "firstName": "FirstName 2",
+      "lastName": "LastName 2",
+      "dataset": "DATASET001",
+      "securitytokn": "fhfh484jer843je848rj393jf",
+      "branding": "base64ImageData",
+      "userTheme": "bsiTheme1",
+      "themeList": [
+        "bsiTheme1",
+        "bsiTheme2",
+        "bsiTheme3"
+      ],
+      "applications": [
+        {
+          "id": "5a4f99a6-dc55-4f8d-955c-35385c9e90a1",
+          "name": "ComplianceFactory",
+          "accessIds": [
+            {
+              "bbd90ab7-2a84-4ad3-998e-705dbc73cdac": {
+                "visible": true
+              }
+            },
+            {
+              "6a5a3e8d-7810-41bb-9025-20a955659279": {
+                "visible": false
+              }
+            },
+            {
+              "cc965204-5c21-403d-a706-cd00f863578f": {
+                "visible": true
+              }
+            }
+          ],
+          "permissions": {
+            "printVariance": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "printLiabilities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "postByCompany": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "deleteByCompany": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      ]
     }
   ]
 }
