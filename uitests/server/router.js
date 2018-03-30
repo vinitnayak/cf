@@ -1,7 +1,11 @@
-
+/**
+ * @author Vinit
+ */
 var request = require('request');
-
-const localhost = 'http://localhost:'
+/**
+ * app router constants
+ */
+const host = 'http://localhost:'
 const port = '30024';
 const svcpath = '/svc/';
 const apiversion = 'v1';
@@ -11,6 +15,9 @@ const MONTHLYCHART_DATA_URL = '/monthlyChartdata'
 const COMPANYTOTAL_URL = '/companytotaldata'
 const AUTHTAXTYPETOTAL_URL = '/authtaxtypetotaldata'
 const VARIANCECHART_DATA_URL = '/variancedata'
+/**
+ * approuter
+ */
 module.exports = {
     approuter: function (app) {
         app.get(COMPANYTOTAL_URL, function (req, res) {
@@ -30,22 +37,31 @@ module.exports = {
         });
     },
 };
-var callServiceRequestGet = function (requrl, res) {
-
+/**
+ * callServiceRequestGet
+ * @param {*} requrl 
+ * @param {*} res 
+ */
+callServiceRequestGet = (requrl, res) => {
     const options = {
-        url: `${localhost}${port}${svcpath}${apiversion}${requrl}`,
+        url: `${host}${port}${svcpath}${apiversion}${requrl}`,
         method: get
     };
     request(options).pipe(res);
 }
-var callServiceRequestPost = function (requrl, postData, res) {
+/**
+ * callServiceRequestPost
+ * @param {*} requrl 
+ * @param {*} postData 
+ * @param {*} res 
+ */
+callServiceRequestPost = (requrl, postData, res) => {
     const options = {
         method: post,
         body: postData,
         json: true,
-        url: `${localhost}${port}${requrl}`,
+        url: `${host}${port}${requrl}`,
     };
-
     request(options, function (err, res, body) {
         if (err) {
             console.error('error posting json: ', err)
