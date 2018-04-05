@@ -101,7 +101,7 @@ class MonthlyPaymentChartComponent extends Component {
             <div class="h-100 w-100">
                 <JqxChart style={{ width: '100%', height: 500 }} className='monthlyChart'
                     title={'2018 Liabilities'} description={'2018 Liabilities Unprepared, Prepared and Paid Quarterly'}
-                    showLegend={true} enableAnimations={true} padding={padding}
+                    showLegend={true} enableAnimations={true} padding={padding} showBorderLine={false}
                     titlePadding={titlePadding} source={mothlyChartData} xAxis={xAxis}
                     colorScheme={'scheme01'} seriesGroups={seriesGroups}
                 />

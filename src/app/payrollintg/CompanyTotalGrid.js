@@ -195,12 +195,12 @@ class CompanyTotalGrid extends React.Component {
             ];
         return (
             <div>
-                <h1>Maintain Payroll Data 
+                <h3 class="text-bsi">Maintain Payroll Data 
                     <a href="#" onClick={() => this.goToFilterPage()} id="filterDataId"><i class="fas fa-filter fa-xs" title="Filter Payroll Data"></i></a>
                     <Tooltip placement="right" isOpen={this.state.filterData} target="filterDataId" toggle={this.toggleFilDat}>
                     Filter Payroll Data
                     </Tooltip>
-                </h1>
+                </h3>
                 <Alert color="primary">
                     {data.filterlabel}
                 </Alert>

@@ -80,7 +80,7 @@ class VarianceChart extends React.Component {
                 <JqxChart style={{ width: '100%', height: 500 }}
                     className='varianceChart'
                     title={'Variance Data For Bailey\'s Baskets - Kronos'} description={'Variance data by Authority/Tax Type'}
-                    showLegend={true} enableAnimations={true} padding={padding} showBorderLine={true}
+                    showLegend={true} enableAnimations={true} padding={padding} showBorderLine={false}
                     titlePadding={titlePadding} source={dataAdapter} legendLayout={legendLayout}
                     colorScheme={'scheme02'} seriesGroups={seriesGroups}
                 />

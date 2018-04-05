@@ -49,5 +49,6 @@ export const divPrnStyle = {
     transition: 'all 0.3s ease',
     textAling: 'right',
     fontSize: '24px',
-    paddingTop:'10px'
+    paddingTop:'10px',
+    float:'right'
 };
