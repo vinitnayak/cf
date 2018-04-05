@@ -299,7 +299,7 @@ class AuthTaxTypeTotalGrid extends React.Component {
                         Post Selected
                     </Tooltip>
                 
-                <Modal size="lg" isOpen={this.state.showAddPayrollRecordModal} toggle={this.toggleAddPayrollRecordModal} onClosed={this.toggleAddPayrollRecordModal} backdrop={this.state.backdrop}>
+                <Modal size="lg" isOpen={this.state.showAddPayrollRecordModal} toggle={this.toggleAddPayrollRecordModal} backdrop={this.state.backdrop}>
 				<ModalHeader toggle={this.toggleAddPayrollRecordModal} >Add Payroll Record</ModalHeader>
 				<ModalBody>
 					{addPayrollForm}
