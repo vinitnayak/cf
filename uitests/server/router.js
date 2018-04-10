@@ -6,7 +6,7 @@ var request = require('request');
  * app router constants
  */
 const host = 'http://localhost:'
-const port = '30024';
+const port = '30025';
 const svcpath = '/svc/';
 const apiversion = 'v1';
 const post = 'POST';
